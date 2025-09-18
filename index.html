@@ -31,8 +31,11 @@
       padding: 20px 5%;
       background-color: #ffffff;
       border-bottom: 1px solid #ddd;
-      position: relative;
-      z-index: 1;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
     }
 
     .logo-container {
@@ -86,9 +89,9 @@
       white-space: nowrap;
       position: absolute;
       width: 100%;
-      top: 40%;
+      top: 100px; /* 修正：上から100pxの位置に配置 */
       left: 0;
-      z-index: -1;
+      z-index: 5; /* 企業理念を他のコンテンツの前面に表示 */
     }
 
     @keyframes visionScroll {
@@ -104,6 +107,7 @@
       padding: 60px 5%;
       max-width: 1100px;
       margin: 0 auto;
+      margin-top: 150px; /* ヘッダーと重ならないように余白を追加 */
     }
 
     /* 企業概要 */
