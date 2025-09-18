@@ -12,12 +12,14 @@
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: #ffffff;
+      background-color: #f8e9d2; /* クリーム色背景 */
       color: #333333;
       line-height: 1.6;
     }
+
     a {
       text-decoration: none;
       color: inherit;
@@ -52,12 +54,12 @@
     }
 
     .logo-container .company-name {
-      font-size: 3em; /* フォントサイズを大きく */
+      font-size: 3em;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: #e63946; /* 赤 */
-      font-family: 'Playfair Display', serif; /* おしゃれなフォント */
+      font-family: 'Playfair Display', serif;
     }
 
     .tagline {
@@ -65,7 +67,7 @@
       font-style: italic;
       color: #666666;
       margin-top: 4px;
-      font-family: 'Roboto', sans-serif; /* こちらはシンプルに */
+      font-family: 'Roboto', sans-serif;
     }
 
     @keyframes logoFade {
@@ -90,7 +92,7 @@
       white-space: nowrap;
       position: absolute;
       width: 100%;
-      top: 100px; /* 修正：上から100pxの位置に配置 */
+      top: 200px; /* 企業理念がかぶらないように位置調整 */
       left: 0;
       z-index: 5;
       background-color: #f8e9d2; /* クリーム色背景 */
@@ -113,12 +115,12 @@
       padding: 60px 5%;
       max-width: 1100px;
       margin: 0 auto;
-      margin-top: 150px;
+      margin-top: 200px;
     }
 
     /* 企業概要 */
     .company-info {
-      background-color: #f9f9f9;
+      background-color: #ffffff;
       padding: 40px;
       border-radius: 8px;
       margin-bottom: 60px;
@@ -168,7 +170,7 @@
     }
     .team-member .photo {
       width: 100%;
-      aspect-ratio: 1 / 1; /* 正方形 */
+      aspect-ratio: 1 / 1;
       overflow: hidden;
       background-color: #eee;
     }
