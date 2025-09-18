@@ -46,8 +46,8 @@
     }
 
     .logo-container img {
-      width: 60px;
-      margin-right: 16px;
+      width: 80px;
+      height: auto;
       transition: transform 0.3s ease;
     }
 
@@ -85,14 +85,19 @@
       padding: 80px 5%;
       font-size: 2.5em;
       font-weight: 700;
-      color: #e63946;
+      color: #000000;
       animation: visionScroll 10s linear infinite;
       white-space: nowrap;
       position: absolute;
       width: 100%;
       top: 100px; /* 修正：上から100pxの位置に配置 */
       left: 0;
-      z-index: 5; /* 企業理念を他のコンテンツの前面に表示 */
+      z-index: 5;
+      background-color: #f8e9d2; /* クリーム色背景 */
+      padding: 20px;
+      border-radius: 10px;
+      font-family: 'Playfair Display', serif;
+      color: #333;
     }
 
     @keyframes visionScroll {
@@ -108,7 +113,7 @@
       padding: 60px 5%;
       max-width: 1100px;
       margin: 0 auto;
-      margin-top: 150px; /* ヘッダーと重ならないように余白を追加 */
+      margin-top: 150px;
     }
 
     /* 企業概要 */
