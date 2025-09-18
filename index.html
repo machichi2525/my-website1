@@ -22,6 +22,7 @@
       text-decoration: none;
       color: inherit;
     }
+
     /* ヘッダー */
     header {
       display: flex;
@@ -30,55 +31,79 @@
       padding: 20px 5%;
       background-color: #ffffff;
       border-bottom: 1px solid #ddd;
+      position: relative;
+      z-index: 1;
     }
-    .logo {
+
+    .logo-container {
       display: flex;
       align-items: center;
+      justify-content: center;
+      position: relative;
+      animation: logoFade 4s ease-out forwards;
     }
-    .logo img {
+
+    .logo-container img {
       width: 60px;
-      height: auto;
-      object-fit: contain;
       margin-right: 16px;
+      transition: transform 0.3s ease;
     }
-    .company-name-tagline {
-      display: flex;
-      flex-direction: column;
-    }
-    .company-name {
-      font-size: 2em;
+
+    .logo-container .company-name {
+      font-size: 2.5em;
       font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #e63946; /* 赤 */
     }
+
     .tagline {
-      font-size: 1.1em;
+      font-size: 1.2em;
       font-style: italic;
       color: #666666;
       margin-top: 4px;
     }
 
-    /* メインコンテンツ */
-    main {
-      padding: 60px 5%;
-      max-width: 1100px;
-      margin: 0 auto;
+    @keyframes logoFade {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+      }
     }
 
     /* 企業理念セクション */
     .company-vision {
       text-align: center;
-      margin-bottom: 50px;
-    }
-    .company-vision h2 {
+      padding: 80px 5%;
       font-size: 2.5em;
       font-weight: 700;
-      color: #c62828; /* 深めの赤 */
-      margin-bottom: 16px;
+      color: #e63946;
+      animation: visionScroll 10s linear infinite;
+      white-space: nowrap;
+      position: absolute;
+      width: 100%;
+      top: 40%;
+      left: 0;
+      z-index: -1;
     }
-    .company-vision p {
-      font-size: 1.2em;
-      max-width: 800px;
+
+    @keyframes visionScroll {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    main {
+      padding: 60px 5%;
+      max-width: 1100px;
       margin: 0 auto;
-      color: #555555;
     }
 
     /* 企業概要 */
@@ -91,7 +116,7 @@
     .company-info h3 {
       font-size: 2em;
       font-weight: 700;
-      color: #c62828;
+      color: #e63946;
       margin-bottom: 24px;
     }
     .company-info .info-grid {
@@ -187,22 +212,21 @@
 <body>
 
   <header>
-    <div class="logo">
-      <img src="https://github.com/machichi2525/my-website1/raw/main/uw_%E3%83%AD%E3%82%B4%E2%91%A0.jpg?raw=true" alt="アンダーウィル ロゴ">
-    </div>
-    <div class="company-name-tagline">
-      <div class="company-name">合同会社アンダーウィル</div>
-      <div class="tagline">ーあなたの未来を共に照らすー</div>
+    <div class="logo-container">
+      <!-- ロゴ画像 -->
+      <img src="https://github.com/machichi2525/my-website1/raw/main/uw_%E3%83%AD%E3%82%B0%E2%91%A0.jpg?raw=true" alt="ロゴ">
+      <div>
+        <div class="company-name">合同会社アンダーウィル</div>
+        <div class="tagline">ーあなたの未来を共に照らすー</div>
+      </div>
     </div>
   </header>
 
-  <main>
-    <!-- 企業理念 -->
-    <section class="company-vision">
-      <h2>企業理念</h2>
-      <p>私たちはお客様の未来を照らし、革新をもたらす企業であり続けます。</p>
-    </section>
+  <div class="company-vision">
+    企業理念: 私たちはお客様の未来を照らし、革新をもたらす企業であり続けます。
+  </div>
 
+  <main>
     <!-- 企業概要 -->
     <section class="company-info">
       <h3>企業概要</h3>
@@ -245,22 +269,4 @@
           </div>
         </div>
         <div class="team-member">
-          <div class="photo">
-            <img src="https://via.placeholder.com/400" alt="山田 太郎">
-          </div>
-          <div class="info">
-            <h4>山田 太郎</h4>
-            <p class="role">開発部 部長</p>
-            <p class="desc">最新技術を駆使し、革新的な製品開発に取り組んでいます。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>合同会社アンダーウィル - All Rights Reserved</p>
-  </footer>
-
-</body>
-</html>
+          <div class="
