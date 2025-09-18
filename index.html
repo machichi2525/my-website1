@@ -2,10 +2,123 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>合同会社アンダーウィル</title>
+  <style>
+    /* 全体のスタイル */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ヘッダー */
+    header {
+      background-color: #2E8B57;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+
+    p.tagline {
+      font-size: 1.2em;
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    /* メインセクション */
+    main {
+      padding: 40px 10%;
+      text-align: center;
+    }
+
+    /* 社員情報セクション */
+    .team-section {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .team-member {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .team-member:hover {
+      transform: translateY(-10px);
+    }
+
+    .team-member img {
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+    }
+
+    .team-member h3 {
+      margin: 20px 0 10px;
+      font-size: 1.5em;
+      color: #2E8B57;
+    }
+
+    .team-member p {
+      font-size: 1.1em;
+      color: #777;
+    }
+
+    /* フッター */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
-  <h1>企業理念</h1>
-  <p>ーあなたの未来を共に照らすー</p>
+  <header>
+    <h1>企業理念</h1>
+    <p class="tagline">ーあなたの未来を共に照らすー</p>
+  </header>
+
+  <main>
+    <section class="team-section">
+      <div class="team-member">
+        <img src="https://via.placeholder.com/150" alt="社員1">
+        <h3>栁本 浩汰</h3>
+        <p>代表取締役社長</p>
+        <p>企業理念を基に、新たな未来を切り開いています。</p>
+      </div>
+      <div class="team-member">
+        <img src="https://via.placeholder.com/150" alt="社員2">
+        <h3>田中 満里菜</h3>
+        <p>副社長</p>
+        <p>お客様のニーズを最優先に、プロジェクトを推進しています。</p>
+      </div>
+      <div class="team-member">
+        <img src="https://via.placeholder.com/150" alt="社員3">
+        <h3>平野 翔大</h3>
+        <p>通信部 部長</p>
+        <p>お客様のニーズに沿って動いていきます。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>合同会社アンダーウィル - All Rights Reserved</p>
+  </footer>
 </body>
 </html>
