@@ -4,180 +4,195 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>合同会社アンダーウィル</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* 全体のスタイル */
-    body {
-      font-family: 'Roboto', sans-serif;
+    /* リセット・基本 */
+    * {
       margin: 0;
       padding: 0;
-      background-color: #fafafa;
+      box-sizing: border-box;
     }
-
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background-color: #ffffff;
+      color: #333333;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    /* ヘッダー */
     header {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      background-color: #e63946; /* 赤 */
-      color: white;
+      justify-content: space-between;
       padding: 20px 5%;
-      position: relative;
+      background-color: #ffffff;
+      border-bottom: 1px solid #ddd;
     }
-
-    .logo-container {
+    .logo {
       display: flex;
       align-items: center;
-      justify-content: center;
     }
-
-    .logo-container img {
-      width: 40px;
-      margin-right: 15px;
-      transition: transform 0.3s ease;
+    .logo img {
+      width: 60px;
+      height: auto;
+      object-fit: contain;
+      margin-right: 16px;
     }
-
-    .logo-container:hover img {
-      transform: scale(1.1);
+    .company-name-tagline {
+      display: flex;
+      flex-direction: column;
     }
-
     .company-name {
-      font-size: 2.5em;
+      font-size: 2em;
       font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
     }
-
     .tagline {
-      font-size: 1.2em;
+      font-size: 1.1em;
       font-style: italic;
-      margin-top: 5px;
+      color: #666666;
+      margin-top: 4px;
     }
 
+    /* メインコンテンツ */
     main {
-      padding: 80px 5% 40px 5%;
-      text-align: center;
-      color: #333;
+      padding: 60px 5%;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
     /* 企業理念セクション */
     .company-vision {
-      max-width: 800px;
-      margin: 0 auto 50px;
-      background-color: #f1faee;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      margin-bottom: 50px;
     }
-
     .company-vision h2 {
       font-size: 2.5em;
-      color: #e63946; /* 赤 */
       font-weight: 700;
-      letter-spacing: 1px;
+      color: #c62828; /* 深めの赤 */
+      margin-bottom: 16px;
     }
-
     .company-vision p {
-      font-size: 1.1em;
-      color: #333;
-      line-height: 1.8;
-    }
-
-    /* 企業概要セクション */
-    .company-info {
-      max-width: 900px;
+      font-size: 1.2em;
+      max-width: 800px;
       margin: 0 auto;
-      padding: 30px;
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      color: #555555;
     }
 
+    /* 企業概要 */
+    .company-info {
+      background-color: #f9f9f9;
+      padding: 40px;
+      border-radius: 8px;
+      margin-bottom: 60px;
+    }
     .company-info h3 {
       font-size: 2em;
       font-weight: 700;
-      color: #e63946; /* 赤 */
-      margin-bottom: 20px;
+      color: #c62828;
+      margin-bottom: 24px;
     }
-
-    .company-info p {
+    .company-info .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 40px;
+    }
+    .company-info .info-grid p {
       font-size: 1.1em;
-      margin-bottom: 15px;
-      line-height: 1.6;
+      color: #444444;
     }
 
     /* 社員紹介セクション */
     .team-section {
+      margin-bottom: 80px;
+    }
+    .team-section h3 {
+      font-size: 2em;
+      font-weight: 700;
+      color: #c62828;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    .team-members {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
     }
-
     .team-member {
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
+      background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .team-member:hover {
-      transform: translateY(-10px);
+      transform: translateY(-8px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
     }
-
-    .team-member img {
+    .team-member .photo {
+      width: 100%;
+      height: 0;
+      padding-top: 100%; /* 正方形比率 */
+      position: relative;
+      background-color: #eee;
+    }
+    .team-member .photo img {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 10px;
     }
-
-    .team-member h3 {
-      margin-top: 20px;
-      font-size: 1.5em;
-      color: #e63946;
+    .team-member .info {
+      padding: 20px;
+    }
+    .team-member .info h4 {
+      font-size: 1.3em;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .team-member .info p.role {
+      font-size: 1em;
       font-weight: 500;
+      color: #777777;
+      margin-bottom: 12px;
     }
-
-    .team-member p {
-      font-size: 1.1em;
-      color: #333;
-      font-weight: 400;
+    .team-member .info p.desc {
+      font-size: 1em;
+      color: #555555;
+      line-height: 1.4;
     }
 
     /* フッター */
     footer {
-      background-color: #333;
-      color: white;
+      background-color: #f5f5f5;
+      color: #888888;
       text-align: center;
-      padding: 20px;
+      padding: 30px 5%;
+      border-top: 1px solid #ddd;
+      font-size: 0.9em;
     }
 
-    /* アニメーション */
-    @keyframes logo-scroll {
-      0% {
-        transform: translateX(100%);
+    /* レスポンシブ調整 */
+    @media (max-width: 768px) {
+      .company-info .info-grid {
+        grid-template-columns: 1fr;
       }
-      100% {
-        transform: translateX(-100%);
-      }
-    }
-
-    .logo-container {
-      animation: logo-scroll 20s linear infinite;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo-container">
-      <!-- ロゴ画像 -->
-      <img src="https://github.com/machichi2525/my-website1/raw/main/uw_%E3%83%AD%E3%82%B0%E2%91%A0.jpg?raw=true" alt="ロゴ">
-      <div>
-        <div class="company-name">合同会社アンダーウィル</div>
-        <div class="tagline">ーあなたの未来を共に照らすー</div>
-      </div>
+    <div class="logo">
+      <img src="https://github.com/machichi2525/my-website1/raw/main/uw_%E3%83%AD%E3%82%B4%E2%91%A0.jpg?raw=true" alt="アンダーウィル ロゴ">
+    </div>
+    <div class="company-name-tagline">
+      <div class="company-name">合同会社アンダーウィル</div>
+      <div class="tagline">ーあなたの未来を共に照らすー</div>
     </div>
   </header>
 
@@ -191,49 +206,54 @@
     <!-- 企業概要 -->
     <section class="company-info">
       <h3>企業概要</h3>
-      <p><strong>会社名：</strong>合同会社アンダーウィル</p>
-      <p><strong>所在地：</strong>〒????-???? 〇〇〇〇</p>
-      <p><strong>代表者：</strong>代表取締役　栁本 浩汰</p>
-      <p><strong>設立：</strong>2024年3月14日</p>
-      <p><strong>資本金：</strong>15万円</p>
-      <p><strong>従業員数：</strong>20名（2025年9月現在）</p>
-      <p><strong>事業内容：</strong>通信事業、Webサイト制作、デジタルマーケティング支援、システム開発</p>
-      <p><strong>主要取引先：</strong>株式会社〇〇、株式会社△△、株式会社□□</p>
-      <p><strong>取引銀行：</strong>〇〇銀行 〇〇支店</p>
-      <p><strong>URL：</strong>https://www.〇〇〇</p>
+      <div class="info-grid">
+        <p><strong>会社名：</strong>合同会社アンダーウィル</p>
+        <p><strong>所在地：</strong>〒????-???? 〇〇〇〇</p>
+        <p><strong>代表者：</strong>代表取締役　栁本 浩汰</p>
+        <p><strong>設立：</strong>2024年3月14日</p>
+        <p><strong>資本金：</strong>15万円</p>
+        <p><strong>従業員数：</strong>20名（2025年9月現在）</p>
+        <p><strong>事業内容：</strong>通信事業、Webサイト制作、デジタルマーケティング支援、システム開発</p>
+        <p><strong>主要取引先：</strong>株式会社〇〇、株式会社△△、株式会社□□</p>
+        <p><strong>取引銀行：</strong>〇〇銀行 〇〇支店</p>
+        <p><strong>URL：</strong>https://www.〇〇〇</p>
+      </div>
     </section>
 
     <!-- 社員紹介 -->
     <section class="team-section">
-      <div class="team-member">
-        <img src="https://github.com/machichi2525/my-website1/raw/main/S__5603390.jpg" alt="栁本 浩汰">
-        <h3>栁本 浩汰</h3>
-        <p>代表取締役社長</p>
-        <p>企業理念を基に、新たな未来を切り開いています。</p>
-      </div>
-      <div class="team-member">
-        <img src="https://via.placeholder.com/150" alt="田中 満里菜">
-        <h3>田中 満里菜</h3>
-        <p>営業部 部長</p>
-        <p>お客様のニーズを最優先に、プロジェクトを推進しています。</p>
-      </div>
-      <div class="team-member">
-        <img src="https://via.placeholder.com/150" alt="山田 太郎">
-        <h3>山田 太郎</h3>
-        <p>開発部 部長</p>
-        <p>最新技術を駆使し、革新的な製品開発に取り組んでいます。</p>
-      </div>
-      <div class="team-member">
-        <img src="https://via.placeholder.com/150" alt="社員4">
-        <h3>社員4</h3>
-        <p>役職4</p>
-        <p>社員紹介文4</p>
-      </div>
-      <div class="team-member">
-        <img src="https://via.placeholder.com/150" alt="社員5">
-        <h3>社員5</h3>
-        <p>役職5</p>
-        <p>社員紹介文5</p>
+      <h3>社員紹介</h3>
+      <div class="team-members">
+        <div class="team-member">
+          <div class="photo">
+            <img src="https://github.com/machichi2525/my-website1/raw/main/S__5603390.jpg" alt="栁本 浩汰">
+          </div>
+          <div class="info">
+            <h4>栁本 浩汰</h4>
+            <p class="role">代表取締役社長</p>
+            <p class="desc">企業理念を基に、新たな未来を切り開いています。</p>
+          </div>
+        </div>
+        <div class="team-member">
+          <div class="photo">
+            <img src="https://via.placeholder.com/400" alt="田中 満里菜">
+          </div>
+          <div class="info">
+            <h4>田中 満里菜</h4>
+            <p class="role">営業部 部長</p>
+            <p class="desc">お客様のニーズを最優先に、プロジェクトを推進しています。</p>
+          </div>
+        </div>
+        <div class="team-member">
+          <div class="photo">
+            <img src="https://via.placeholder.com/400" alt="山田 太郎">
+          </div>
+          <div class="info">
+            <h4>山田 太郎</h4>
+            <p class="role">開発部 部長</p>
+            <p class="desc">最新技術を駆使し、革新的な製品開発に取り組んでいます。</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
