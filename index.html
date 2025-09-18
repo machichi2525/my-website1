@@ -4,257 +4,87 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>合同会社アンダーウィル</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    /* リセット・基本 */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
     body {
-      font-family: 'Noto Sans JP', sans-serif;
+      font-family: 'Roboto', sans-serif;
       background-color: #ffffff;
-      color: #333333;
-      line-height: 1.6;
+      color: #333;
     }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* ヘッダー */
     header {
       display: flex;
       align-items: center;
-      justify-content: space-between;
       padding: 20px 5%;
       background-color: #ffffff;
       border-bottom: 1px solid #ddd;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
+      position: relative;
       z-index: 10;
     }
-
-    .logo-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      animation: logoFade 4s ease-out forwards;
+    .logo {
+      flex-shrink: 0;
     }
-
-    .logo-container img {
-      width: 60px;
-      margin-right: 16px;
-      transition: transform 0.3s ease;
+    .logo img {
+      width: 80px; /* ロゴを少し大きくしてみた */
+      height: auto;
+      object-fit: contain;
     }
-
-    .logo-container .company-name {
+    .company-name-tagline {
+      margin-left: 20px;
+    }
+    .company-name {
+      font-family: 'Playfair Display', serif;
       font-size: 2.5em;
       font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #e63946; /* 赤 */
+      color: #c62828;
     }
-
     .tagline {
       font-size: 1.2em;
-      font-style: italic;
-      color: #666666;
+      color: #666;
       margin-top: 4px;
-    }
-
-    @keyframes logoFade {
-      0% {
-        opacity: 1;
-        transform: scale(1);
-      }
-      100% {
-        opacity: 0.3;
-        transform: scale(0.8);
-      }
-    }
-
-    /* 企業理念セクション */
-    .company-vision {
-      text-align: center;
-      padding: 80px 5%;
-      font-size: 2.5em;
-      font-weight: 700;
-      color: #e63946;
-      animation: visionScroll 10s linear infinite;
-      white-space: nowrap;
-      position: absolute;
-      width: 100%;
-      top: 100px; /* 修正：上から100pxの位置に配置 */
-      left: 0;
-      z-index: 5; /* 企業理念を他のコンテンツの前面に表示 */
-    }
-
-    @keyframes visionScroll {
-      0% {
-        transform: translateX(100%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
+      font-style: italic;
     }
 
     main {
-      padding: 60px 5%;
+      padding: 120px 5% 40px; /* ヘッダー固定なら余裕取るため padding-top 多め */
       max-width: 1100px;
       margin: 0 auto;
-      margin-top: 150px; /* ヘッダーと重ならないように余白を追加 */
     }
 
-    /* 企業概要 */
-    .company-info {
-      background-color: #f9f9f9;
-      padding: 40px;
-      border-radius: 8px;
-      margin-bottom: 60px;
-    }
-    .company-info h3 {
-      font-size: 2em;
-      font-weight: 700;
-      color: #e63946;
-      margin-bottom: 24px;
-    }
-    .company-info .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px 40px;
-    }
-    .company-info .info-grid p {
-      font-size: 1.1em;
-      color: #444444;
-    }
+    /* 以下、必要なら他のセクションも同じように調整 */
 
-    /* 社員紹介セクション */
-    .team-section {
-      margin-bottom: 80px;
-    }
-    .team-section h3 {
-      font-size: 2em;
-      font-weight: 700;
-      color: #c62828;
-      margin-bottom: 32px;
-      text-align: center;
-    }
-    .team-members {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-    .team-member {
-      background-color: #ffffff;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .team-member:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-    }
-    .team-member .photo {
-      width: 100%;
-      height: 0;
-      padding-top: 100%; /* 正方形比率 */
-      position: relative;
-      background-color: #eee;
-    }
-    .team-member .photo img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .team-member .info {
-      padding: 20px;
-    }
-    .team-member .info h4 {
-      font-size: 1.3em;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-    .team-member .info p.role {
-      font-size: 1em;
-      font-weight: 500;
-      color: #777777;
-      margin-bottom: 12px;
-    }
-    .team-member .info p.desc {
-      font-size: 1em;
-      color: #555555;
-      line-height: 1.4;
-    }
-
-    /* フッター */
-    footer {
-      background-color: #f5f5f5;
-      color: #888888;
-      text-align: center;
-      padding: 30px 5%;
-      border-top: 1px solid #ddd;
-      font-size: 0.9em;
-    }
-
-    /* レスポンシブ調整 */
-    @media (max-width: 768px) {
-      .company-info .info-grid {
-        grid-template-columns: 1fr;
-      }
-    }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo-container">
-      <!-- ロゴ画像 -->
-      <img src="https://github.com/machichi2525/my-website1/raw/main/uw_%E3%83%AD%E3%82%B0%E2%91%A0.jpg?raw=true" alt="ロゴ">
-      <div>
-        <div class="company-name">合同会社アンダーウィル</div>
-        <div class="tagline">ーあなたの未来を共に照らすー</div>
-      </div>
+    <div class="logo">
+      <!-- Raw.githubusercontent.com フォーマットの URL を使ってみる -->
+      <img src="https://raw.githubusercontent.com/machichi2525/my-website1/main/uw_%E3%83%AD%E3%82%B4%E2%91%A0.jpg" alt="合同会社アンダーウィル ロゴ">
+    </div>
+    <div class="company-name-tagline">
+      <div class="company-name">合同会社アンダーウィル</div>
+      <div class="tagline">ーあなたの未来を共に照らすー</div>
     </div>
   </header>
 
-  <div class="company-vision">
-    企業理念: 私たちはお客様の未来を照らし、革新をもたらす企業であり続けます。
-  </div>
-
   <main>
-    <!-- 企業概要 -->
-    <section class="company-info">
-      <h3>企業概要</h3>
-      <div class="info-grid">
-        <p><strong>会社名：</strong>合同会社アンダーウィル</p>
-        <p><strong>所在地：</strong>〒????-???? 〇〇〇〇</p>
-        <p><strong>代表者：</strong>代表取締役　栁本 浩汰</p>
-        <p><strong>設立：</strong>2024年3月14日</p>
-        <p><strong>資本金：</strong>15万円</p>
-        <p><strong>従業員数：</strong>20名（2025年9月現在）</p>
-        <p><strong>事業内容：</strong>通信事業、Webサイト制作、デジタルマーケティング支援、システム開発</p>
-        <p><strong>主要取引先：</strong>株式会社〇〇、株式会社△△、株式会社□□</p>
-        <p><strong>取引銀行：</strong>〇〇銀行 〇〇支店</p>
-        <p><strong>URL：</strong>https://www.〇〇〇</p>
-      </div>
+    <!-- ここから企業理念や社員紹介など -->
+    <section class="company-vision">
+      <h2>企業理念</h2>
+      <p>私たちはお客様の未来を照らし、革新をもたらす企業であり続けます。</p>
     </section>
 
-    <!-- 社員紹介 -->
     <section class="team-section">
       <h3>社員紹介</h3>
       <div class="team-members">
         <div class="team-member">
           <div class="photo">
-            <img src="https://github.com/machichi2525/my-website1/raw/main/S__5603390.jpg" alt="栁本 浩汰">
+            <img src="https://raw.githubusercontent.com/machichi2525/my-website1/main/S__5603390.jpg" alt="栁本 浩汰">
           </div>
           <div class="info">
             <h4>栁本 浩汰</h4>
@@ -285,10 +115,6 @@
       </div>
     </section>
   </main>
-
-  <footer>
-    <p>合同会社アンダーウィル - All Rights Reserved</p>
-  </footer>
 
 </body>
 </html>
