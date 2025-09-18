@@ -11,6 +11,7 @@
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
       font-family: 'Roboto', sans-serif;
       background-color: #f8e9d2; /* クリーム色 */
@@ -23,6 +24,7 @@
       color: inherit;
     }
 
+    /* ヘッダー */
     header {
       display: flex;
       align-items: center;
@@ -36,17 +38,20 @@
       z-index: 100;
       gap: 16px;
     }
+
     .logo-container {
       display: flex;
       align-items: center;
       gap: 12px;
       animation: logoFade 4s ease-out forwards;
     }
+
     .logo-container img {
       width: 80px;
       height: auto;
       display: block;
     }
+
     .company-name {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
@@ -55,12 +60,14 @@
       text-transform: uppercase;
       white-space: nowrap;
     }
+
     .tagline {
       font-style: italic;
       font-size: 1.1rem;
       color: #666;
       margin-top: 4px;
     }
+
     @keyframes logoFade {
       0% {
         opacity: 1;
@@ -118,6 +125,7 @@
       margin-bottom: 60px;
       box-shadow: 0 6px 16px rgba(0,0,0,0.1);
     }
+
     .company-info h3 {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
@@ -125,6 +133,7 @@
       color: #e63946;
       margin-bottom: 24px;
     }
+
     .company-info .info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -132,6 +141,7 @@
       font-size: 1.1rem;
       color: #444;
     }
+
     @media (max-width: 768px) {
       .company-info .info-grid {
         grid-template-columns: 1fr;
@@ -142,6 +152,7 @@
     .team-section {
       margin-bottom: 80px;
     }
+
     .team-section h3 {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
@@ -150,11 +161,13 @@
       margin-bottom: 32px;
       text-align: center;
     }
+
     .team-members {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
     }
+
     .team-member {
       background-color: #fff;
       border-radius: 8px;
@@ -162,38 +175,45 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .team-member:hover {
       transform: translateY(-6px);
       box-shadow: 0 12px 30px rgba(0,0,0,0.15);
     }
+
     .team-member .photo {
       width: 100%;
       aspect-ratio: 1 / 1;
       overflow: hidden;
       background-color: #eee;
     }
+
     .team-member .photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
     }
+
     .team-member .info {
       padding: 20px;
       text-align: center;
     }
+
     .team-member .info h4 {
       font-family: 'Playfair Display', serif;
       font-size: 1.5rem;
       margin-bottom: 6px;
       color: #111;
     }
+
     .team-member .info .role {
       font-size: 1rem;
       color: #c62828;
       margin-bottom: 10px;
       font-weight: 500;
     }
+
     .team-member .info .desc {
       font-size: 0.95rem;
       color: #444;
