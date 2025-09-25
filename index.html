@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="ja">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>合同会社アンダーウィル</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+  <!-- モダンで使いやすいフォントを読み込み -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  
   <style>
     * {
       margin: 0;
@@ -13,59 +13,69 @@
     }
 
     body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #fefae0; /* 明るい黄色ベース */
-      color: #333;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f8f9fa; /* 明るいグレー寄りでモダンに */
+      color: #212529; /* ダークグレー */
       line-height: 1.6;
+      font-size: 16px;
     }
 
     a {
       text-decoration: none;
-      color: inherit;
+      color: #007bff; /* ブルー系リンク */
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #0056b3;
     }
 
     /* ヘッダー */
     header {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 20px 5%;
-      background: linear-gradient(90deg, #fdf497, #a1c4fd); /* 黄色から青 */
-      border-bottom: 1px solid #ccc;
+      background: linear-gradient(90deg, #00b4db, #0083b0); /* 爽やかなブルーグラデ */
+      color: white;
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 100;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
 
     .logo-container img {
-      width: 120px;
+      width: 130px;
       height: auto;
       display: block;
     }
 
-    /* 企業理念の横流し */
+    /* 企業理念（横スクロール） */
     .company-vision-wrapper {
       position: fixed;
       top: 80px;
       width: 100%;
-      background-color: #fff3b0;
-      padding: 12px 0;
+      background-color: #e3f2fd; /* 淡いブルー */
+      padding: 10px 0;
       overflow: hidden;
-      z-index: 90;
-      border-bottom: 1px solid #ddd;
+      z-index: 900;
+      border-bottom: 1px solid #90caf9;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 
     .company-vision {
       display: inline-block;
       white-space: nowrap;
-      font-family: 'Playfair Display', serif;
+      font-family: 'Montserrat', sans-serif;
       font-weight: 700;
-      font-size: 1.5rem;
-      color: #003049;
+      font-size: 1.4rem;
+      color: #0d47a1;
       padding-left: 100%;
-      animation: visionScroll 15s linear infinite;
+      animation: visionScroll 20s linear infinite;
+      letter-spacing: 0.03em;
     }
 
     @keyframes visionScroll {
@@ -79,7 +89,7 @@
 
     main {
       max-width: 1100px;
-      margin: 140px auto 60px; /* ヘッダー80 + 横流し60 = 140 */
+      margin: 140px auto 60px; /* ヘッダー80 + 企業理念60 = 140 */
       padding: 0 5%;
     }
 
@@ -87,26 +97,53 @@
     .company-info {
       background-color: #ffffff;
       padding: 40px;
-      border-radius: 10px;
+      border-radius: 12px;
       margin-bottom: 60px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     }
 
     .company-info h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      color: #003566;
-      margin-bottom: 24px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 2.5rem;
+      color: #0d47a1;
+      margin-bottom: 32px;
+      letter-spacing: 0.05em;
+      border-bottom: 3px solid #00b4db;
+      padding-bottom: 8px;
     }
 
     .company-info .info-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px 40px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px 48px;
       font-size: 1.1rem;
-      color: #444;
+      color: #495057;
     }
 
+    /* 社員紹介やその他も同じフォントと雰囲気で */
+    section h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 2rem;
+      color: #0d47a1;
+      margin-bottom: 24px;
+      letter-spacing: 0.04em;
+    }
+
+    /* フッター */
+    footer {
+      text-align: center;
+      padding: 20px 5%;
+      background-color: #e3f2fd;
+      color: #0d47a1;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      border-top: 1px solid #90caf9;
+    }
+
+    /* スマホ対応 */
     @media (max-width: 768px) {
       .company-info .info-grid {
         grid-template-columns: 1fr;
@@ -145,9 +182,10 @@
         <p><strong>事業内容：</strong>通信事業、Webサイト制作、デジタルマーケティング支援、システム開発</p>
         <p><strong>主要取引先：</strong>株式会社〇〇、株式会社△△、株式会社□□</p>
         <p><strong>取引銀行：</strong>〇〇銀行 〇〇支店</p>
-        <p><strong>URL：</strong>https://www.〇〇〇</p>
+        <p><strong>URL：</strong><a href="https://www.〇〇〇" target="_blank" rel="noopener noreferrer">https://www.〇〇〇</a></p>
       </div>
     </section>
+
     <!-- 社員紹介 -->
     <section class="team-section">
       <h3>社員紹介</h3>
@@ -186,6 +224,7 @@
         </div>
       </div>
     </section>
+
     <!-- 採用情報 -->
     <section class="recruit-section">
       <h3>採用情報</h3>
@@ -202,4 +241,3 @@
   </footer>
 
 </body>
-</html>
