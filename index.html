@@ -14,8 +14,8 @@
 
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: #1a1a1a;
-      color: #eee;
+      background-color: #eaf4fc; /* 爽やかな薄青 */
+      color: #0b3d91; /* 濃い青 */
       line-height: 1.6;
     }
 
@@ -30,8 +30,8 @@
       justify-content: center;
       align-items: center;
       padding: 20px 5%;
-      background-color: #1a1a1a;
-      border-bottom: 3px solid #b71c1c;
+      background-color: #0b3d91; /* 濃い青 */
+      border-bottom: 4px solid #f9d342; /* 明るい黄色 */
       position: fixed;
       top: 0;
       left: 0;
@@ -43,17 +43,17 @@
       width: 120px;
       height: auto;
       display: block;
-      filter: none; /* フィルター解除で元のロゴ色を表示 */
+      filter: none;
     }
 
     /* 企業理念 横流しセクション */
     .company-vision-wrapper {
       width: 100%;
-      background-color: #b71c1c;
+      background-color: #f9d342; /* 明るい黄色 */
       padding: 12px 0;
       overflow: hidden;
       z-index: 90;
-      border-bottom: 2px solid #880e0e;
+      border-bottom: 2px solid #d4b735; /* 少し落ち着いた黄色 */
       margin-top: 80px; /* ヘッダー分の余白 */
     }
 
@@ -63,7 +63,7 @@
       font-family: 'Playfair Display', serif;
       font-weight: 700;
       font-size: 1.8rem;
-      color: #fff;
+      color: #0b3d91; /* 濃い青 */
       padding-left: 100%;
       animation: visionScroll 15s linear infinite;
     }
@@ -85,21 +85,21 @@
 
     /* 企業概要 */
     .company-info {
-      background-color: #222;
+      background-color: #ffffff;
       padding: 40px;
       border-radius: 8px;
       margin-bottom: 60px;
-      box-shadow: 0 6px 16px rgba(183, 28, 28, 0.5);
-      color: #eee;
+      box-shadow: 0 6px 16px rgba(15, 60, 145, 0.2);
+      color: #0b3d91;
     }
 
     .company-info h3 {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       font-weight: 700;
-      color: #b71c1c;
+      color: #f9d342;
       margin-bottom: 24px;
-      border-left: 6px solid #b71c1c;
+      border-left: 6px solid #f9d342;
       padding-left: 12px;
     }
 
@@ -108,7 +108,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 16px 40px;
       font-size: 1.1rem;
-      color: #ddd;
+      color: #0b3d91;
     }
 
     /* 社員紹介セクション */
@@ -120,10 +120,9 @@
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       font-weight: 700;
-      color: #b71c1c;
+      color: #0b3d91;
       margin-bottom: 32px;
       text-align: center;
-      text-shadow: 1px 1px 3px #000;
     }
 
     .team-members {
@@ -133,25 +132,25 @@
     }
 
     .team-member {
-      background-color: #222;
+      background-color: #f0f8ff;
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 8px 20px rgba(183, 28, 28, 0.5);
+      box-shadow: 0 8px 20px rgba(15, 60, 145, 0.3);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      color: #eee;
+      color: #0b3d91;
     }
 
     .team-member:hover {
       transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(183, 28, 28, 0.75);
+      box-shadow: 0 12px 30px rgba(15, 60, 145, 0.5);
     }
 
     .team-member .photo {
       width: 100%;
       aspect-ratio: 1 / 1;
       overflow: hidden;
-      background-color: #111;
-      border-bottom: 4px solid #b71c1c;
+      background-color: #dbe9ff;
+      border-bottom: 4px solid #f9d342;
     }
 
     .team-member .photo img {
@@ -159,7 +158,7 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      filter: brightness(0.9);
+      filter: brightness(1);
       transition: filter 0.3s ease;
     }
 
@@ -176,46 +175,46 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.5rem;
       margin-bottom: 6px;
-      color: #b71c1c;
+      color: #f9d342;
     }
 
     .team-member .info .role {
       font-size: 1rem;
-      color: #eee;
+      color: #0b3d91;
       margin-bottom: 10px;
       font-weight: 500;
     }
 
     .team-member .info .desc {
       font-size: 0.95rem;
-      color: #ccc;
+      color: #2c3e7a;
       line-height: 1.5;
     }
 
     /* 採用情報セクション */
     .recruit-section {
-      background-color: #222;
+      background-color: #ffffff;
       padding: 40px;
       border-radius: 8px;
       margin-bottom: 60px;
-      box-shadow: 0 6px 16px rgba(183, 28, 28, 0.5);
-      color: #eee;
+      box-shadow: 0 6px 16px rgba(15, 60, 145, 0.2);
+      color: #0b3d91;
     }
 
     .recruit-section h3 {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       font-weight: 700;
-      color: #b71c1c;
+      color: #f9d342;
       margin-bottom: 24px;
-      border-left: 6px solid #b71c1c;
+      border-left: 6px solid #f9d342;
       padding-left: 12px;
       text-align: center;
     }
 
     .recruit-section p {
       font-size: 1.1rem;
-      color: #ddd;
+      color: #0b3d91;
       max-width: 900px;
       margin: 0 auto;
       line-height: 1.6;
@@ -224,11 +223,11 @@
 
     /* フッター */
     footer {
-      background-color: #1a1a1a;
-      color: #aaa;
+      background-color: #0b3d91;
+      color: #f9d342;
       text-align: center;
       padding: 30px 5%;
-      border-top: 1px solid #b71c1c;
+      border-top: 1px solid #f9d342;
       font-size: 0.9rem;
     }
 
