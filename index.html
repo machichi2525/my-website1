@@ -1,71 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>合同会社アンダーウィル</title>
-  <!-- モダンで使いやすいフォントを読み込み -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet" />
-  
   <style>
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
     }
-
     body {
       font-family: 'Open Sans', sans-serif;
-      background-color: #f8f9fa; /* 明るいグレー寄りでモダンに */
-      color: #212529; /* ダークグレー */
+      background-color: #f8f9fa;
+      color: #212529;
       line-height: 1.6;
       font-size: 16px;
     }
-
     a {
+      color: #007bff;
       text-decoration: none;
-      color: #007bff; /* ブルー系リンク */
-      transition: color 0.3s ease;
+      transition: color 0.3s;
     }
     a:hover {
       color: #0056b3;
     }
-
-    /* ヘッダー */
     header {
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
+      background: linear-gradient(90deg, #00b4db, #0083b0);
+      color: white;
+      padding: 20px 5%;
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      z-index: 1000;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px 5%;
-      background: linear-gradient(90deg, #00b4db, #0083b0); /* 爽やかなブルーグラデ */
-      color: white;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
       box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
-
     .logo-container img {
       width: 130px;
       height: auto;
       display: block;
     }
-
-    /* 企業理念（横スクロール） */
+    /* 企業理念の横スクロール部分はヘッダーの下に固定 */
     .company-vision-wrapper {
       position: fixed;
       top: 80px;
       width: 100%;
-      background-color: #e3f2fd; /* 淡いブルー */
+      background-color: #e3f2fd;
       padding: 10px 0;
       overflow: hidden;
-      z-index: 900;
       border-bottom: 1px solid #90caf9;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      z-index: 999;
     }
-
     .company-vision {
       display: inline-block;
       white-space: nowrap;
@@ -77,7 +66,6 @@
       animation: visionScroll 20s linear infinite;
       letter-spacing: 0.03em;
     }
-
     @keyframes visionScroll {
       0% {
         transform: translateX(0);
@@ -86,22 +74,20 @@
         transform: translateX(-100%);
       }
     }
-
     main {
       max-width: 1100px;
-      margin: 140px auto 60px; /* ヘッダー80 + 企業理念60 = 140 */
+      margin: 140px auto 60px;
       padding: 0 5%;
     }
-
-    /* 企業概要 */
+    section {
+      margin-bottom: 60px;
+    }
     .company-info {
-      background-color: #ffffff;
+      background-color: #fff;
       padding: 40px;
       border-radius: 12px;
-      margin-bottom: 60px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
     }
-
     .company-info h3 {
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
@@ -112,7 +98,6 @@
       border-bottom: 3px solid #00b4db;
       padding-bottom: 8px;
     }
-
     .company-info .info-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -120,9 +105,8 @@
       font-size: 1.1rem;
       color: #495057;
     }
-
-    /* 社員紹介やその他も同じフォントと雰囲気で */
-    section h3 {
+    /* 社員紹介 */
+    .team-section h3 {
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
       font-size: 2rem;
@@ -130,8 +114,59 @@
       margin-bottom: 24px;
       letter-spacing: 0.04em;
     }
-
-    /* フッター */
+    .team-members {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .team-member {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 280px;
+      text-align: center;
+      padding: 20px;
+      font-family: 'Open Sans', sans-serif;
+      color: #333;
+      transition: transform 0.3s ease;
+    }
+    .team-member:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .team-member img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+      margin-bottom: 16px;
+      height: 280px;
+    }
+    .team-member h4 {
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 6px;
+      color: #0d47a1;
+    }
+    .role {
+      font-style: italic;
+      color: #555;
+      margin-bottom: 12px;
+    }
+    .desc {
+      font-size: 0.95rem;
+      line-height: 1.4;
+      color: #666;
+    }
+    /* 採用情報 */
+    .recruit-section h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 2rem;
+      color: #0d47a1;
+      margin-bottom: 24px;
+      letter-spacing: 0.04em;
+    }
     footer {
       text-align: center;
       padding: 20px 5%;
@@ -142,9 +177,16 @@
       font-size: 1rem;
       border-top: 1px solid #90caf9;
     }
-
-    /* スマホ対応 */
-    @media (max-width: 768px) {
+    /* レスポンシブ */
+    @media (max-width: 900px) {
+      .team-members {
+        flex-direction: column;
+        align-items: center;
+      }
+      .team-member {
+        width: 90%;
+        max-width: 350px;
+      }
       .company-info .info-grid {
         grid-template-columns: 1fr;
       }
@@ -153,14 +195,12 @@
 </head>
 <body>
 
-  <!-- ヘッダー -->
   <header>
     <div class="logo-container">
       <img src="https://github.com/machichi2525/my-website1/blob/main/uw_%E3%83%AD%E3%82%B4%E2%91%A0.jpg?raw=true" alt="合同会社アンダーウィル ロゴ" />
     </div>
   </header>
 
-  <!-- 企業理念（横スクロール） -->
   <div class="company-vision-wrapper">
     <div class="company-vision">
       企業理念：私たちはお客様の未来を照らし、革新をもたらす企業であり続けます。
@@ -168,8 +208,6 @@
   </div>
 
   <main>
-
-    <!-- 企業概要 -->
     <section class="company-info">
       <h3>企業概要</h3>
       <div class="info-grid">
@@ -186,58 +224,41 @@
       </div>
     </section>
 
-    <!-- 社員紹介 -->
     <section class="team-section">
       <h3>社員紹介</h3>
       <div class="team-members">
         <div class="team-member">
-          <div class="photo">
-            <img src="https://raw.githubusercontent.com/machichi2525/my-website1/main/S__5603390.jpg" alt="栁本 浩汰" />
-          </div>
-          <div class="info">
-            <h4>栁本 浩汰</h4>
-            <p class="role">代表取締役社長</p>
-            <p class="desc">企業理念を基に、新たな未来を切り開いています。</p>
-          </div>
+          <img src="https://raw.githubusercontent.com/machichi2525/my-website1/main/S__5603390.jpg" alt="栁本 浩汰" />
+          <h4>栁本 浩汰</h4>
+          <p class="role">代表取締役社長</p>
+          <p class="desc">企業理念を基に、新たな未来を切り開いています。</p>
         </div>
-
         <div class="team-member">
-          <div class="photo">
-            <img src="https://via.placeholder.com/400" alt="田中 満里菜" />
-          </div>
-          <div class="info">
-            <h4>田中 満里菜</h4>
-            <p class="role">営業部 部長</p>
-            <p class="desc">お客様のニーズを最優先に、プロジェクトを推進しています。</p>
-          </div>
+          <img src="https://via.placeholder.com/400" alt="田中 満里菜" />
+          <h4>田中 満里菜</h4>
+          <p class="role">営業部 部長</p>
+          <p class="desc">お客様のニーズを最優先に、プロジェクトを推進しています。</p>
         </div>
-
         <div class="team-member">
-          <div class="photo">
-            <img src="https://via.placeholder.com/400" alt="山田 太郎" />
-          </div>
-          <div class="info">
-            <h4>山田 太郎</h4>
-            <p class="role">開発部 部長</p>
-            <p class="desc">最新技術を駆使し、革新的な製品開発に取り組んでいます。</p>
-          </div>
+          <img src="https://via.placeholder.com/400" alt="山田 太郎" />
+          <h4>山田 太郎</h4>
+          <p class="role">開発部 部長</p>
+          <p class="desc">最新技術を駆使し、革新的な製品開発に取り組んでいます。</p>
         </div>
       </div>
     </section>
 
-    <!-- 採用情報 -->
     <section class="recruit-section">
       <h3>採用情報</h3>
       <p>私たちは共に未来を創る仲間を募集しています。</p>
       <p>エンジニア、営業、マーケティングなど、さまざまな職種で人材を募集中です。</p>
       <a href="saiyou.html">応募はこちらから</a>
     </section>
-
   </main>
 
-  <!-- フッター -->
   <footer>
     <p>合同会社アンダーウィル - All Rights Reserved</p>
   </footer>
-
+  
 </body>
+</html>
