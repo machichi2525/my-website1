@@ -14,7 +14,7 @@
 
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: #1a1a1a; /* ヘッダー背景色と統一 */
+      background-color: #1a1a1a;
       color: #eee;
       line-height: 1.6;
     }
@@ -43,20 +43,7 @@
       width: 120px;
       height: auto;
       display: block;
-      filter: brightness(0) invert(1);
-    }
-
-    /* メインビジュアル */
-    .mainvisual {
-      background-image: url('https://www.general-packer.co.jp/assets/images/company/mainvisual.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 180px;
-      margin: 80px auto 40px;
-      max-width: 1100px;
-      border-bottom: 4px solid #b71c1c;
-      filter: brightness(0.75);
-      border-radius: 8px;
+      filter: none; /* フィルター解除で元のロゴ色を表示 */
     }
 
     /* 企業理念 横流しセクション */
@@ -67,6 +54,7 @@
       overflow: hidden;
       z-index: 90;
       border-bottom: 2px solid #880e0e;
+      margin-top: 80px; /* ヘッダー分の余白 */
     }
 
     .company-vision {
@@ -231,6 +219,7 @@
       max-width: 900px;
       margin: 0 auto;
       line-height: 1.6;
+      white-space: pre-line;
     }
 
     /* フッター */
@@ -279,8 +268,6 @@
       <img src="https://github.com/machichi2525/my-website1/blob/main/uw_%E3%83%AD%E3%82%B4%E2%91%A0.jpg?raw=true" alt="合同会社アンダーウィル ロゴ" />
     </div>
   </header>
-
-  <div class="mainvisual"></div>
 
   <div class="company-vision-wrapper">
     <div class="company-vision">
@@ -346,11 +333,11 @@
     <section class="recruit-section">
       <h3>採用情報</h3>
       <p>
-        合同会社アンダーウィルでは、共に会社の未来を創る仲間を募集しています。<br />
-        【募集職種】営業、開発、マーケティング、サポートスタッフ<br />
-        【応募資格】経験者優遇、未経験者も歓迎<br />
-        【待遇】社会保険完備、交通費支給、昇給あり<br />
-        詳細はお問い合わせフォームよりご連絡ください。
+合同会社アンダーウィルでは、共に会社の未来を創る仲間を募集しています。<br />
+【募集職種】営業、開発、マーケティング、サポートスタッフ<br />
+【応募資格】経験者優遇、未経験者も歓迎<br />
+【待遇】社会保険完備、交通費支給、昇給あり<br />
+詳細はお問い合わせフォームよりご連絡ください。
       </p>
     </section>
   </main>
