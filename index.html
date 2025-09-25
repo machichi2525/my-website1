@@ -4,68 +4,74 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>合同会社アンダーウィル</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <!-- Google Fonts: モダンでおしゃれなPlayfair DisplayとRobotoの組み合わせ -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
+
     body {
-      font-family: 'Open Sans', sans-serif;
-      background-color: #f8f9fa;
-      color: #212529;
+      font-family: 'Roboto', sans-serif;
+      background-color: #fefae0; /* 明るい黄色ベース */
+      color: #333;
       line-height: 1.6;
-      font-size: 16px;
     }
+
     a {
-      color: #007bff;
       text-decoration: none;
-      transition: color 0.3s;
+      color: inherit;
     }
-    a:hover {
-      color: #0056b3;
-    }
+
+    /* ヘッダー */
     header {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      background: linear-gradient(90deg, #00b4db, #0083b0);
-      color: white;
-      padding: 20px 5%;
-      position: fixed;
-      top: 0; left: 0; width: 100%;
-      z-index: 1000;
       display: flex;
       justify-content: center;
       align-items: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      padding: 20px 5%;
+      background: linear-gradient(90deg, #fdf497, #a1c4fd); /* 黄色から青 */
+      border-bottom: 1px solid #ccc;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
+
     .logo-container img {
-      width: 130px;
+      width: 120px;
       height: auto;
       display: block;
     }
-    /* 企業理念の横スクロール部分はヘッダーの下に固定 */
+
+    /* 企業理念の横流し */
     .company-vision-wrapper {
       position: fixed;
-      top: 80px;
+      top: 80px; /* ヘッダー80pxの下に表示 */
       width: 100%;
-      background-color: #e3f2fd;
-      padding: 10px 0;
+      background-color: #fff3b0;
+      padding: 12px 0;
       overflow: hidden;
-      border-bottom: 1px solid #90caf9;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      z-index: 999;
+      z-index: 90;
+      border-bottom: 1px solid #ddd;
+      box-shadow: inset 0 -2px 3px rgba(0,0,0,0.05);
     }
+
     .company-vision {
       display: inline-block;
       white-space: nowrap;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Playfair Display', serif;
       font-weight: 700;
-      font-size: 1.4rem;
-      color: #0d47a1;
+      font-size: 1.5rem;
+      color: #003049;
       padding-left: 100%;
-      animation: visionScroll 20s linear infinite;
-      letter-spacing: 0.03em;
+      animation: visionScroll 15s linear infinite;
+      letter-spacing: 0.04em;
     }
+
     @keyframes visionScroll {
       0% {
         transform: translateX(0);
@@ -74,133 +80,142 @@
         transform: translateX(-100%);
       }
     }
+
     main {
       max-width: 1100px;
-      margin: 140px auto 60px;
+      margin: 140px auto 60px; /* ヘッダー80 + 企業理念60 = 140 */
       padding: 0 5%;
     }
-    section {
-      margin-bottom: 60px;
-    }
+
+    /* 企業概要 */
     .company-info {
-      background-color: #fff;
+      background-color: #ffffff;
       padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      margin-bottom: 60px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
     }
+
     .company-info h3 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 2.5rem;
-      color: #0d47a1;
-      margin-bottom: 32px;
-      letter-spacing: 0.05em;
-      border-bottom: 3px solid #00b4db;
-      padding-bottom: 8px;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: #003566;
+      margin-bottom: 24px;
     }
+
     .company-info .info-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px 48px;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 40px;
       font-size: 1.1rem;
-      color: #495057;
+      color: #444;
     }
+
+    @media (max-width: 768px) {
+      .company-info .info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* 社員紹介 */
     .team-section h3 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
+      font-family: 'Playfair Display', serif;
       font-size: 2rem;
-      color: #0d47a1;
-      margin-bottom: 24px;
-      letter-spacing: 0.04em;
+      color: #003566;
+      margin-bottom: 32px;
     }
+
     .team-members {
       display: flex;
       gap: 40px;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: flex-start;
     }
+
     .team-member {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      width: 280px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      width: 300px;
       text-align: center;
       padding: 20px;
-      font-family: 'Open Sans', sans-serif;
+      font-family: 'Roboto', sans-serif;
       color: #333;
       transition: transform 0.3s ease;
     }
+
     .team-member:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
     }
+
     .team-member img {
       width: 100%;
-      border-radius: 12px;
+      border-radius: 10px;
       object-fit: cover;
-      margin-bottom: 16px;
       height: 280px;
+      margin-bottom: 16px;
     }
+
     .team-member h4 {
-      font-weight: 700;
+      font-weight: 500;
       font-size: 1.3rem;
-      margin-bottom: 6px;
-      color: #0d47a1;
+      margin-bottom: 8px;
+      color: #003049;
     }
+
     .role {
       font-style: italic;
-      color: #555;
+      color: #666;
       margin-bottom: 12px;
     }
+
     .desc {
       font-size: 0.95rem;
       line-height: 1.4;
-      color: #666;
+      color: #555;
     }
+
     /* 採用情報 */
     .recruit-section h3 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
+      font-family: 'Playfair Display', serif;
       font-size: 2rem;
-      color: #0d47a1;
+      color: #003566;
       margin-bottom: 24px;
-      letter-spacing: 0.04em;
     }
+
     footer {
       text-align: center;
       padding: 20px 5%;
-      background-color: #e3f2fd;
-      color: #0d47a1;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
+      background-color: #fefae0;
+      color: #003049;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
       font-size: 1rem;
-      border-top: 1px solid #90caf9;
+      border-top: 1px solid #ccc;
+      margin-top: 60px;
     }
-    /* レスポンシブ */
-    @media (max-width: 900px) {
+
+    @media (max-width: 768px) {
       .team-members {
-        flex-direction: column;
-        align-items: center;
+        justify-content: center;
       }
       .team-member {
         width: 90%;
-        max-width: 350px;
-      }
-      .company-info .info-grid {
-        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- ヘッダー -->
   <header>
     <div class="logo-container">
       <img src="https://github.com/machichi2525/my-website1/blob/main/uw_%E3%83%AD%E3%82%B4%E2%91%A0.jpg?raw=true" alt="合同会社アンダーウィル ロゴ" />
     </div>
   </header>
 
+  <!-- 企業理念（横スクロール） -->
   <div class="company-vision-wrapper">
     <div class="company-vision">
       企業理念：私たちはお客様の未来を照らし、革新をもたらす企業であり続けます。
@@ -208,6 +223,8 @@
   </div>
 
   <main>
+
+    <!-- 企業概要 -->
     <section class="company-info">
       <h3>企業概要</h3>
       <div class="info-grid">
@@ -224,6 +241,7 @@
       </div>
     </section>
 
+    <!-- 社員紹介 -->
     <section class="team-section">
       <h3>社員紹介</h3>
       <div class="team-members">
@@ -233,12 +251,14 @@
           <p class="role">代表取締役社長</p>
           <p class="desc">企業理念を基に、新たな未来を切り開いています。</p>
         </div>
+
         <div class="team-member">
           <img src="https://via.placeholder.com/400" alt="田中 満里菜" />
           <h4>田中 満里菜</h4>
           <p class="role">営業部 部長</p>
           <p class="desc">お客様のニーズを最優先に、プロジェクトを推進しています。</p>
         </div>
+
         <div class="team-member">
           <img src="https://via.placeholder.com/400" alt="山田 太郎" />
           <h4>山田 太郎</h4>
@@ -248,17 +268,20 @@
       </div>
     </section>
 
+    <!-- 採用情報 -->
     <section class="recruit-section">
       <h3>採用情報</h3>
       <p>私たちは共に未来を創る仲間を募集しています。</p>
       <p>エンジニア、営業、マーケティングなど、さまざまな職種で人材を募集中です。</p>
       <a href="saiyou.html">応募はこちらから</a>
     </section>
+
   </main>
 
+  <!-- フッター -->
   <footer>
     <p>合同会社アンダーウィル - All Rights Reserved</p>
   </footer>
-  
+
 </body>
 </html>
