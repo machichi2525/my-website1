@@ -4,265 +4,135 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>合同会社アンダーウィル</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
-
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
       font-family: 'Roboto', sans-serif;
       background-color: #fefae0;
-      color: #333;
-      line-height: 1.6;
+      margin: 0; padding: 0;
     }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
     header {
+      height: 60px;
+      background: #fdf497;
       display: flex;
-      justify-content: center;
       align-items: center;
-      padding: 20px 5%;
-      background: linear-gradient(90deg, #fdf497, #a1c4fd);
-      border-bottom: 1px solid #ccc;
+      justify-content: center;
+      font-weight: bold;
       position: fixed;
-      top: 0;
-      left: 0;
       width: 100%;
+      top: 0;
       z-index: 100;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-
-    .logo-container img {
-      width: 120px;
-      height: auto;
-      display: block;
-    }
-
-    /* 企業理念の横流し */
     .company-vision-wrapper {
       position: fixed;
-      top: 80px;
+      top: 60px;
       width: 100%;
-      height: 50px;
+      height: 40px;
       background-color: #fff3b0;
-      border-bottom: 1px solid #ddd;
       overflow: hidden;
-      z-index: 90;
+      border-bottom: 1px solid #ddd;
       display: flex;
       align-items: center;
-      padding-left: 10px;
-      box-shadow: inset 0 -2px 3px rgba(0,0,0,0.05);
+      z-index: 90;
     }
-
     .company-vision {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: 1.4rem;
-      color: #003049;
       white-space: nowrap;
+      font-weight: 700;
+      font-size: 1.2rem;
+      padding-left: 100%;
       display: inline-block;
-      padding-left: 100%; /* 右外から始める */
-      animation: visionScroll 15s linear infinite;
-      letter-spacing: 0.04em;
+      color: #003049;
+      font-family: 'Playfair Display', serif;
+      will-change: transform;
     }
 
-    /* 横流しの幅分だけ動く */
     @keyframes visionScroll {
-      0% {
+      from {
         transform: translateX(0);
       }
-      100% {
+      to {
         transform: translateX(-100%);
       }
     }
 
     main {
+      padding: 120px 20px 40px;
       max-width: 1100px;
-      margin: 140px auto 60px;
-      padding: 0 5%;
+      margin: 0 auto;
     }
-
-    .company-info {
-      background-color: #ffffff;
-      padding: 40px;
-      border-radius: 10px;
-      margin-bottom: 60px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-    }
-
-    .company-info h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      color: #003566;
-      margin-bottom: 24px;
-    }
-
-    .company-info .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px 40px;
-      font-size: 1.1rem;
-      color: #444;
-    }
-
-    @media (max-width: 768px) {
-      .company-info .info-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .team-section h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      color: #003566;
-      margin-bottom: 32px;
-    }
-
     .team-members {
       display: flex;
       flex-wrap: wrap;
-      gap: 40px;
+      gap: 30px;
       justify-content: flex-start;
     }
-
-    /* 幅を300px固定→max幅に変更しつつ小さい画面対応 */
     .team-member {
-      background-color: #fff;
+      background: #fff;
       border-radius: 10px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-      width: 300px;
-      max-width: 100%;
-      text-align: center;
-      padding: 20px;
-      font-family: 'Roboto', sans-serif;
-      color: #333;
-      transition: transform 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: calc((100% - 60px) / 3);
+      max-width: 320px;
       box-sizing: border-box;
+      padding: 16px;
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
     }
-
-    .team-member:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-    }
-
     .team-member img {
       width: 100%;
-      border-radius: 10px;
-      object-fit: cover;
       height: 280px;
-      margin-bottom: 16px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 12px;
     }
-
     .team-member h4 {
-      font-weight: 500;
-      font-size: 1.3rem;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       color: #003049;
     }
-
     .role {
       font-style: italic;
       color: #666;
       margin-bottom: 12px;
     }
-
     .desc {
-      font-size: 0.95rem;
-      line-height: 1.4;
-      color: #555;
+      font-size: 0.9rem;
+      color: #444;
     }
 
-    .recruit-section h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      color: #003566;
-      margin-bottom: 24px;
-    }
-
-    .recruit-section p {
-      margin-bottom: 12px;
-      font-size: 1.1rem;
-    }
-
-    /* 応募ボタンっぽく見せる */
+    /* 応募ボタン */
     .recruit-section a {
       display: inline-block;
-      padding: 12px 24px;
-      background-color: #003049;
+      margin-top: 20px;
+      background: #003049;
       color: #fff;
+      padding: 12px 28px;
       border-radius: 6px;
       font-weight: 600;
+      text-decoration: none;
       transition: background-color 0.3s ease;
-      margin-top: 10px;
     }
-
     .recruit-section a:hover {
-      background-color: #005a87;
+      background: #005a87;
     }
 
-    footer {
-      text-align: center;
-      padding: 20px 5%;
-      background-color: #fefae0;
-      color: #003049;
-      font-family: 'Roboto', sans-serif;
-      font-weight: 500;
-      font-size: 1rem;
-      border-top: 1px solid #ccc;
-      margin-top: 60px;
-    }
-
-    @media (max-width: 768px) {
-      .team-members {
-        justify-content: center;
-      }
-
+    /* スマホ対応 */
+    @media (max-width: 800px) {
       .team-member {
-        width: 90%;
+        width: 100%;
       }
     }
   </style>
 </head>
 <body>
-
   <header>
-    <div class="logo-container">
-      <img src="https://github.com/machichi2525/my-website1/blob/main/uw_%E3%83%AD%E3%82%B4%E2%91%A0.jpg?raw=true" alt="合同会社アンダーウィル ロゴ" />
-    </div>
+    合同会社アンダーウィル
   </header>
 
   <div class="company-vision-wrapper">
-    <div class="company-vision">
+    <div class="company-vision" id="companyVision">
       企業理念：私たちはお客様の未来を照らし、革新をもたらす企業であり続けます。
     </div>
   </div>
 
   <main>
-    <section class="company-info">
-      <h3>企業概要</h3>
-      <div class="info-grid">
-        <p><strong>会社名：</strong>合同会社アンダーウィル</p>
-        <p><strong>所在地：</strong>〒????-???? 〇〇〇〇</p>
-        <p><strong>代表者：</strong>代表取締役　栁本 浩汰</p>
-        <p><strong>設立：</strong>2024年3月14日</p>
-        <p><strong>資本金：</strong>15万円</p>
-        <p><strong>従業員数：</strong>20名（2025年9月現在）</p>
-        <p><strong>事業内容：</strong>通信事業、Webサイト制作、デジタルマーケティング支援、システム開発</p>
-        <p><strong>主要取引先：</strong>株式会社〇〇、株式会社△△、株式会社□□</p>
-        <p><strong>取引銀行：</strong>〇〇銀行 〇〇支店</p>
-        <p><strong>URL：</strong><a href="https://www.〇〇〇" target="_blank" rel="noopener noreferrer">https://www.〇〇〇</a></p>
-      </div>
-    </section>
-
     <section class="team-section">
       <h3>社員紹介</h3>
       <div class="team-members">
@@ -272,14 +142,12 @@
           <p class="role">代表取締役社長</p>
           <p class="desc">企業理念を基に、新たな未来を切り開いています。</p>
         </div>
-
         <div class="team-member">
           <img src="https://via.placeholder.com/400" alt="田中 満里菜" />
           <h4>田中 満里菜</h4>
           <p class="role">営業部 部長</p>
           <p class="desc">お客様のニーズを最優先に、プロジェクトを推進しています。</p>
         </div>
-
         <div class="team-member">
           <img src="https://via.placeholder.com/400" alt="山田 太郎" />
           <h4>山田 太郎</h4>
@@ -292,14 +160,36 @@
     <section class="recruit-section">
       <h3>採用情報</h3>
       <p>私たちは共に未来を創る仲間を募集しています。</p>
-      <p>エンジニア、営業、マーケティングなど、さまざまな職種で人材を募集中です。</p>
       <a href="saiyou.html">応募はこちらから</a>
     </section>
   </main>
 
-  <footer>
-    <p>合同会社アンダーウィル - All Rights Reserved</p>
-  </footer>
+  <script>
+    // 横流し文字の幅に応じてアニメーション時間を調整する関数
+    function setupVisionScroll() {
+      const vision = document.getElementById('companyVision');
+      const wrapper = vision.parentElement;
 
+      // 文字列の幅
+      const visionWidth = vision.offsetWidth;
+      // 親の幅
+      const wrapperWidth = wrapper.offsetWidth;
+
+      // アニメーション距離は文字列幅 + 親幅
+      const distance = visionWidth + wrapperWidth;
+
+      // スクロール速度（px/秒）、お好みで調整してOK
+      const speed = 100; // 100px/sec
+
+      // アニメーション時間 = 距離 / 速度
+      const duration = distance / speed;
+
+      vision.style.animation = `visionScroll ${duration}s linear infinite`;
+      vision.style.paddingLeft = wrapperWidth + 'px';
+    }
+
+    window.addEventListener('load', setupVisionScroll);
+    window.addEventListener('resize', setupVisionScroll);
+  </script>
 </body>
 </html>
