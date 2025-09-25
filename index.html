@@ -14,7 +14,7 @@
 
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: #f8e9d2; /* クリーム色 */
+      background-color: #f8e9d2;
       color: #333;
       line-height: 1.6;
     }
@@ -26,36 +26,59 @@
 
     /* ヘッダー */
     header {
+      background-color: #2f59a0;
+      padding: 15px 5%;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      padding: 20px 5%;
-      background-image: url('https://www.transparenttextures.com/patterns/flower-power.png'); /* 花柄背景 */
-      background-size: cover;
-      background-position: center;
-      border-bottom: 1px solid #ddd;
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 100;
+      z-index: 200;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
 
     .logo-container img {
-      width: 120px;
-      height: auto;
+      height: 40px;
+      width: auto;
       display: block;
+    }
+
+    .menu-icon {
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* メインビジュアル */
+    .mainvisual {
+      background-image: url('https://www.general-packer.co.jp/assets/images/company/mainvisual.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 140px;
+      margin-top: 60px; /* ヘッダー分の高さ */
+      display: flex;
+      align-items: center;
+      padding-left: 30px;
+      position: relative;
+      color: white;
+      font-weight: bold;
+      font-size: 28px;
+      text-shadow: 0 0 8px rgba(0,0,0,0.7);
+      font-family: 'Playfair Display', serif;
     }
 
     /* 企業理念 横流しセクション */
     .company-vision-wrapper {
       position: fixed;
-      top: 120px; /* ヘッダーの高さ + 余白 */
+      top: 200px; /* ヘッダー＋メインビジュアル */
       width: 100%;
-      background-color: #f8e9d2; /* クリーム色背景 */
+      background-color: #f8e9d2;
       padding: 12px 0;
       overflow: hidden;
-      z-index: 90;
+      z-index: 150;
       border-bottom: 1px solid #ddd;
     }
 
@@ -81,7 +104,7 @@
 
     main {
       max-width: 1100px;
-      margin: 200px auto 60px; /* ヘッダー+企業理念の分余白確保 */
+      margin: 280px auto 60px; /* ヘッダー+メインビジュアル+企業理念分の余白 */
       padding: 0 5%;
     }
 
@@ -196,6 +219,21 @@
       border-top: 1px solid #ddd;
       font-size: 0.9rem;
     }
+
+    /* スマホ対応 */
+    @media (max-width: 600px) {
+      .mainvisual {
+        height: 100px;
+        font-size: 20px;
+        padding-left: 15px;
+      }
+      .company-vision-wrapper {
+        top: 160px;
+      }
+      main {
+        margin-top: 240px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -204,7 +242,12 @@
     <div class="logo-container">
       <img src="https://github.com/machichi2525/my-website1/blob/main/uw_%E3%83%AD%E3%82%B4%E2%91%A0.jpg?raw=true" alt="合同会社アンダーウィル ロゴ" />
     </div>
+    <div class="menu-icon">&#9776;</div>
   </header>
+
+  <div class="mainvisual">
+    企業情報
+  </div>
 
   <div class="company-vision-wrapper">
     <div class="company-vision">
