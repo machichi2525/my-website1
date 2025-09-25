@@ -4,8 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>合同会社アンダーウィル</title>
-  <!-- Google Fonts: モダンでおしゃれなPlayfair DisplayとRobotoの組み合わせ -->
+
+  <!-- Google Fonts 読み込み -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+
   <style>
     * {
       margin: 0;
@@ -47,27 +49,31 @@
       display: block;
     }
 
-    /* 企業理念の横流し */
+    /* 企業理念の横流しラッパー */
     .company-vision-wrapper {
       position: fixed;
-      top: 80px; /* ヘッダー80pxの下に表示 */
+      top: 80px; /* ヘッダーの高さ */
       width: 100%;
+      height: 50px; /* 固定高さに */
       background-color: #fff3b0;
-      padding: 12px 0;
+      border-bottom: 1px solid #ddd;
       overflow: hidden;
       z-index: 90;
-      border-bottom: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      padding-left: 10px; /* 左余白 */
       box-shadow: inset 0 -2px 3px rgba(0,0,0,0.05);
     }
 
+    /* 横流しの中身 */
     .company-vision {
-      display: inline-block;
-      white-space: nowrap;
       font-family: 'Playfair Display', serif;
       font-weight: 700;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       color: #003049;
-      padding-left: 100%;
+      white-space: nowrap;
+      display: inline-block;
+      padding-left: 100%; /* アニメーション開始時に右から */
       animation: visionScroll 15s linear infinite;
       letter-spacing: 0.04em;
     }
@@ -83,7 +89,7 @@
 
     main {
       max-width: 1100px;
-      margin: 140px auto 60px; /* ヘッダー80 + 企業理念60 = 140 */
+      margin: 140px auto 60px; /* ヘッダー80px + 企業理念50px + 10px余白 */
       padding: 0 5%;
     }
 
