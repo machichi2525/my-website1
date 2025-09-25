@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>合同会社アンダーウィル</title>
 
-  <!-- Google Fonts 読み込み -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
 
   <style>
@@ -17,7 +16,7 @@
 
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: #fefae0; /* 明るい黄色ベース */
+      background-color: #fefae0;
       color: #333;
       line-height: 1.6;
     }
@@ -27,13 +26,12 @@
       color: inherit;
     }
 
-    /* ヘッダー */
     header {
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 20px 5%;
-      background: linear-gradient(90deg, #fdf497, #a1c4fd); /* 黄色から青 */
+      background: linear-gradient(90deg, #fdf497, #a1c4fd);
       border-bottom: 1px solid #ccc;
       position: fixed;
       top: 0;
@@ -49,23 +47,22 @@
       display: block;
     }
 
-    /* 企業理念の横流しラッパー */
+    /* 企業理念の横流し */
     .company-vision-wrapper {
       position: fixed;
-      top: 80px; /* ヘッダーの高さ */
+      top: 80px;
       width: 100%;
-      height: 50px; /* 固定高さに */
+      height: 50px;
       background-color: #fff3b0;
       border-bottom: 1px solid #ddd;
       overflow: hidden;
       z-index: 90;
       display: flex;
       align-items: center;
-      padding-left: 10px; /* 左余白 */
+      padding-left: 10px;
       box-shadow: inset 0 -2px 3px rgba(0,0,0,0.05);
     }
 
-    /* 横流しの中身 */
     .company-vision {
       font-family: 'Playfair Display', serif;
       font-weight: 700;
@@ -73,11 +70,12 @@
       color: #003049;
       white-space: nowrap;
       display: inline-block;
-      padding-left: 100%; /* アニメーション開始時に右から */
+      padding-left: 100%; /* 右外から始める */
       animation: visionScroll 15s linear infinite;
       letter-spacing: 0.04em;
     }
 
+    /* 横流しの幅分だけ動く */
     @keyframes visionScroll {
       0% {
         transform: translateX(0);
@@ -89,11 +87,10 @@
 
     main {
       max-width: 1100px;
-      margin: 140px auto 60px; /* ヘッダー80px + 企業理念50px + 10px余白 */
+      margin: 140px auto 60px;
       padding: 0 5%;
     }
 
-    /* 企業概要 */
     .company-info {
       background-color: #ffffff;
       padding: 40px;
@@ -123,7 +120,6 @@
       }
     }
 
-    /* 社員紹介 */
     .team-section h3 {
       font-family: 'Playfair Display', serif;
       font-size: 2rem;
@@ -133,21 +129,24 @@
 
     .team-members {
       display: flex;
-      gap: 40px;
       flex-wrap: wrap;
+      gap: 40px;
       justify-content: flex-start;
     }
 
+    /* 幅を300px固定→max幅に変更しつつ小さい画面対応 */
     .team-member {
       background-color: #fff;
       border-radius: 10px;
       box-shadow: 0 6px 12px rgba(0,0,0,0.1);
       width: 300px;
+      max-width: 100%;
       text-align: center;
       padding: 20px;
       font-family: 'Roboto', sans-serif;
       color: #333;
       transition: transform 0.3s ease;
+      box-sizing: border-box;
     }
 
     .team-member:hover {
@@ -182,12 +181,32 @@
       color: #555;
     }
 
-    /* 採用情報 */
     .recruit-section h3 {
       font-family: 'Playfair Display', serif;
       font-size: 2rem;
       color: #003566;
       margin-bottom: 24px;
+    }
+
+    .recruit-section p {
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+
+    /* 応募ボタンっぽく見せる */
+    .recruit-section a {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #003049;
+      color: #fff;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .recruit-section a:hover {
+      background-color: #005a87;
     }
 
     footer {
@@ -206,6 +225,7 @@
       .team-members {
         justify-content: center;
       }
+
       .team-member {
         width: 90%;
       }
@@ -214,14 +234,12 @@
 </head>
 <body>
 
-  <!-- ヘッダー -->
   <header>
     <div class="logo-container">
       <img src="https://github.com/machichi2525/my-website1/blob/main/uw_%E3%83%AD%E3%82%B4%E2%91%A0.jpg?raw=true" alt="合同会社アンダーウィル ロゴ" />
     </div>
   </header>
 
-  <!-- 企業理念（横スクロール） -->
   <div class="company-vision-wrapper">
     <div class="company-vision">
       企業理念：私たちはお客様の未来を照らし、革新をもたらす企業であり続けます。
@@ -229,8 +247,6 @@
   </div>
 
   <main>
-
-    <!-- 企業概要 -->
     <section class="company-info">
       <h3>企業概要</h3>
       <div class="info-grid">
@@ -247,7 +263,6 @@
       </div>
     </section>
 
-    <!-- 社員紹介 -->
     <section class="team-section">
       <h3>社員紹介</h3>
       <div class="team-members">
@@ -274,17 +289,14 @@
       </div>
     </section>
 
-    <!-- 採用情報 -->
     <section class="recruit-section">
       <h3>採用情報</h3>
       <p>私たちは共に未来を創る仲間を募集しています。</p>
       <p>エンジニア、営業、マーケティングなど、さまざまな職種で人材を募集中です。</p>
       <a href="saiyou.html">応募はこちらから</a>
     </section>
-
   </main>
 
-  <!-- フッター -->
   <footer>
     <p>合同会社アンダーウィル - All Rights Reserved</p>
   </footer>
