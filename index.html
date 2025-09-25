@@ -14,8 +14,8 @@
 
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: #eaf4fc; /* 爽やかな薄青 */
-      color: #0b3d91; /* 濃い青 */
+      background-color: #fefae0; /* 明るい黄色ベース */
+      color: #333;
       line-height: 1.6;
     }
 
@@ -30,8 +30,8 @@
       justify-content: center;
       align-items: center;
       padding: 20px 5%;
-      background-color: #0b3d91; /* 濃い青 */
-      border-bottom: 4px solid #f9d342; /* 明るい黄色 */
+      background: linear-gradient(90deg, #fdf497, #a1c4fd); /* 黄色から青 */
+      border-bottom: 1px solid #ccc;
       position: fixed;
       top: 0;
       left: 0;
@@ -43,18 +43,18 @@
       width: 120px;
       height: auto;
       display: block;
-      filter: none;
     }
 
-    /* 企業理念 横流しセクション */
+    /* 企業理念の横流し */
     .company-vision-wrapper {
+      position: fixed;
+      top: 100px;
       width: 100%;
-      background-color: #f9d342; /* 明るい黄色 */
+      background-color: #fff3b0;
       padding: 12px 0;
       overflow: hidden;
       z-index: 90;
-      border-bottom: 2px solid #d4b735; /* 少し落ち着いた黄色 */
-      margin-top: 80px; /* ヘッダー分の余白 */
+      border-bottom: 1px solid #ddd;
     }
 
     .company-vision {
@@ -62,8 +62,8 @@
       white-space: nowrap;
       font-family: 'Playfair Display', serif;
       font-weight: 700;
-      font-size: 1.8rem;
-      color: #0b3d91; /* 濃い青 */
+      font-size: 1.5rem;
+      color: #003049;
       padding-left: 100%;
       animation: visionScroll 15s linear infinite;
     }
@@ -79,28 +79,23 @@
 
     main {
       max-width: 1100px;
-      margin: 40px auto 60px;
+      margin: 180px auto 60px;
       padding: 0 5%;
     }
-
     /* 企業概要 */
     .company-info {
       background-color: #ffffff;
       padding: 40px;
-      border-radius: 8px;
+      border-radius: 10px;
       margin-bottom: 60px;
-      box-shadow: 0 6px 16px rgba(15, 60, 145, 0.2);
-      color: #0b3d91;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
     }
 
     .company-info h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #f9d342;
+      font-size: 2.2rem;
+      color: #003566;
       margin-bottom: 24px;
-      border-left: 6px solid #f9d342;
-      padding-left: 12px;
     }
 
     .company-info .info-grid {
@@ -108,19 +103,24 @@
       grid-template-columns: 1fr 1fr;
       gap: 16px 40px;
       font-size: 1.1rem;
-      color: #0b3d91;
+      color: #444;
     }
 
-    /* 社員紹介セクション */
+    @media (max-width: 768px) {
+      .company-info .info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* 社員紹介 */
     .team-section {
       margin-bottom: 80px;
     }
 
     .team-section h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #0b3d91;
+      font-size: 2.2rem;
+      color: #005f73;
       margin-bottom: 32px;
       text-align: center;
     }
@@ -132,25 +132,23 @@
     }
 
     .team-member {
-      background-color: #f0f8ff;
+      background-color: #ffffff;
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 8px 20px rgba(15, 60, 145, 0.3);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      color: #0b3d91;
     }
 
     .team-member:hover {
       transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(15, 60, 145, 0.5);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
     }
 
     .team-member .photo {
       width: 100%;
       aspect-ratio: 1 / 1;
+      background-color: #e0f7fa;
       overflow: hidden;
-      background-color: #dbe9ff;
-      border-bottom: 4px solid #f9d342;
     }
 
     .team-member .photo img {
@@ -158,12 +156,6 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      filter: brightness(1);
-      transition: filter 0.3s ease;
-    }
-
-    .team-member:hover .photo img {
-      filter: brightness(1.1);
     }
 
     .team-member .info {
@@ -172,109 +164,84 @@
     }
 
     .team-member .info h4 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      margin-bottom: 6px;
-      color: #f9d342;
+      font-size: 1.4rem;
+      color: #003049;
     }
 
     .team-member .info .role {
       font-size: 1rem;
-      color: #0b3d91;
+      color: #005f73;
       margin-bottom: 10px;
-      font-weight: 500;
     }
 
     .team-member .info .desc {
       font-size: 0.95rem;
-      color: #2c3e7a;
+      color: #444;
       line-height: 1.5;
     }
 
-    /* 採用情報セクション */
+    /* 採用情報 */
     .recruit-section {
-      background-color: #ffffff;
-      padding: 40px;
-      border-radius: 8px;
-      margin-bottom: 60px;
-      box-shadow: 0 6px 16px rgba(15, 60, 145, 0.2);
-      color: #0b3d91;
+      margin-bottom: 80px;
     }
 
     .recruit-section h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #f9d342;
+      font-size: 2.2rem;
+      color: #003566;
       margin-bottom: 24px;
-      border-left: 6px solid #f9d342;
-      padding-left: 12px;
-      text-align: center;
     }
 
     .recruit-section p {
-      font-size: 1.1rem;
-      color: #0b3d91;
-      max-width: 900px;
-      margin: 0 auto;
-      line-height: 1.6;
-      white-space: pre-line;
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 16px;
+    }
+
+    .recruit-section a {
+      display: inline-block;
+      background-color: #0077b6;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .recruit-section a:hover {
+      background-color: #023e8a;
     }
 
     /* フッター */
     footer {
-      background-color: #0b3d91;
-      color: #f9d342;
+      background-color: #f1f1f1;
+      color: #888;
       text-align: center;
       padding: 30px 5%;
-      border-top: 1px solid #f9d342;
+      border-top: 1px solid #ccc;
       font-size: 0.9rem;
-    }
-
-    /* レスポンシブ対応 */
-    @media (max-width: 768px) {
-      .company-info .info-grid {
-        grid-template-columns: 1fr;
-      }
-
-      main {
-        margin: 40px 20px 60px;
-        padding: 0 10px;
-      }
-
-      .team-members {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 400px) {
-      .company-vision {
-        font-size: 1.2rem;
-      }
-
-      .company-info h3,
-      .team-section h3,
-      .recruit-section h3 {
-        font-size: 1.8rem;
-      }
     }
   </style>
 </head>
 <body>
 
+  <!-- ヘッダー -->
   <header>
     <div class="logo-container">
       <img src="https://github.com/machichi2525/my-website1/blob/main/uw_%E3%83%AD%E3%82%B4%E2%91%A0.jpg?raw=true" alt="合同会社アンダーウィル ロゴ" />
     </div>
   </header>
 
+  <!-- 企業理念（横スクロール） -->
   <div class="company-vision-wrapper">
     <div class="company-vision">
-      企業理念: 私たちはお客様の未来を照らし、革新をもたらす企業であり続けます。
+      企業理念：私たちはお客様の未来を照らし、革新をもたらす企業であり続けます。
     </div>
   </div>
 
+  <!-- メインコンテンツ -->
   <main>
+
+    <!-- 企業概要 -->
     <section class="company-info">
       <h3>企業概要</h3>
       <div class="info-grid">
@@ -291,6 +258,7 @@
       </div>
     </section>
 
+    <!-- 社員紹介 -->
     <section class="team-section">
       <h3>社員紹介</h3>
       <div class="team-members">
@@ -329,18 +297,17 @@
       </div>
     </section>
 
+    <!-- 採用情報 -->
     <section class="recruit-section">
       <h3>採用情報</h3>
-      <p>
-合同会社アンダーウィルでは、共に会社の未来を創る仲間を募集しています。<br />
-【募集職種】営業、開発、マーケティング、サポートスタッフ<br />
-【応募資格】経験者優遇、未経験者も歓迎<br />
-【待遇】社会保険完備、交通費支給、昇給あり<br />
-詳細はお問い合わせフォームよりご連絡ください。
-      </p>
+      <p>私たちは共に未来を創る仲間を募集しています。</p>
+      <p>エンジニア、営業、マーケティングなど、さまざまな職種で人材を募集中です。</p>
+      <a href="#">応募はこちらから</a>
     </section>
+
   </main>
 
+  <!-- フッター -->
   <footer>
     <p>合同会社アンダーウィル - All Rights Reserved</p>
   </footer>
