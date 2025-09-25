@@ -14,8 +14,8 @@
 
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: #f8e9d2;
-      color: #333;
+      background-color: #111; /* 黒ベース */
+      color: #eee; /* 明るめの文字色 */
       line-height: 1.6;
     }
 
@@ -26,30 +26,24 @@
 
     /* ヘッダー */
     header {
-      background-color: #2f59a0;
-      padding: 15px 5%;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
+      padding: 20px 5%;
+      background-color: #1a1a1a; /* 黒に近いダークグレー */
+      border-bottom: 3px solid #b71c1c; /* 深い赤のボーダー */
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 200;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      z-index: 100;
     }
 
     .logo-container img {
-      height: 40px;
-      width: auto;
+      width: 120px;
+      height: auto;
       display: block;
-    }
-
-    .menu-icon {
-      font-size: 28px;
-      color: white;
-      cursor: pointer;
-      user-select: none;
+      filter: brightness(0) invert(1); /* ロゴがもし黒い場合は白っぽく */
     }
 
     /* メインビジュアル */
@@ -57,29 +51,22 @@
       background-image: url('https://www.general-packer.co.jp/assets/images/company/mainvisual.jpg');
       background-size: cover;
       background-position: center;
-      height: 140px;
-      margin-top: 60px; /* ヘッダー分の高さ */
-      display: flex;
-      align-items: center;
-      padding-left: 30px;
-      position: relative;
-      color: white;
-      font-weight: bold;
-      font-size: 28px;
-      text-shadow: 0 0 8px rgba(0,0,0,0.7);
-      font-family: 'Playfair Display', serif;
+      height: 180px;
+      margin: 80px auto 40px; /* ヘッダー分のスペース調整 */
+      max-width: 1100px;
+      border-bottom: 4px solid #b71c1c;
+      filter: brightness(0.75);
+      border-radius: 8px;
     }
 
     /* 企業理念 横流しセクション */
     .company-vision-wrapper {
-      position: fixed;
-      top: 200px; /* ヘッダー＋メインビジュアル */
       width: 100%;
-      background-color: #f8e9d2;
+      background-color: #b71c1c; /* 深い赤 */
       padding: 12px 0;
       overflow: hidden;
-      z-index: 150;
-      border-bottom: 1px solid #ddd;
+      z-index: 90;
+      border-bottom: 2px solid #880e0e;
     }
 
     .company-vision {
@@ -88,7 +75,7 @@
       font-family: 'Playfair Display', serif;
       font-weight: 700;
       font-size: 1.8rem;
-      color: #000;
+      color: #fff;
       padding-left: 100%;
       animation: visionScroll 15s linear infinite;
     }
@@ -104,25 +91,28 @@
 
     main {
       max-width: 1100px;
-      margin: 280px auto 60px; /* ヘッダー+メインビジュアル+企業理念分の余白 */
+      margin: 40px auto 60px;
       padding: 0 5%;
     }
 
     /* 企業概要 */
     .company-info {
-      background-color: #fff;
+      background-color: #222; /* 濃いグレー黒 */
       padding: 40px;
       border-radius: 8px;
       margin-bottom: 60px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 16px rgba(183, 28, 28, 0.5); /* 赤の影 */
+      color: #eee;
     }
 
     .company-info h3 {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       font-weight: 700;
-      color: #e63946;
+      color: #b71c1c; /* 深い赤 */
       margin-bottom: 24px;
+      border-left: 6px solid #b71c1c;
+      padding-left: 12px;
     }
 
     .company-info .info-grid {
@@ -130,7 +120,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 16px 40px;
       font-size: 1.1rem;
-      color: #444;
+      color: #ddd;
     }
 
     @media (max-width: 768px) {
@@ -148,9 +138,10 @@
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       font-weight: 700;
-      color: #c62828;
+      color: #b71c1c;
       margin-bottom: 32px;
       text-align: center;
+      text-shadow: 1px 1px 3px #000;
     }
 
     .team-members {
@@ -160,23 +151,25 @@
     }
 
     .team-member {
-      background-color: #fff;
+      background-color: #222;
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 20px rgba(183, 28, 28, 0.5);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      color: #eee;
     }
 
     .team-member:hover {
       transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+      box-shadow: 0 12px 30px rgba(183, 28, 28, 0.75);
     }
 
     .team-member .photo {
       width: 100%;
       aspect-ratio: 1 / 1;
       overflow: hidden;
-      background-color: #eee;
+      background-color: #111;
+      border-bottom: 4px solid #b71c1c;
     }
 
     .team-member .photo img {
@@ -184,6 +177,12 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      filter: brightness(0.9);
+      transition: filter 0.3s ease;
+    }
+
+    .team-member:hover .photo img {
+      filter: brightness(1.1);
     }
 
     .team-member .info {
@@ -195,44 +194,29 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.5rem;
       margin-bottom: 6px;
-      color: #111;
+      color: #b71c1c;
     }
 
     .team-member .info .role {
       font-size: 1rem;
-      color: #c62828;
+      color: #eee;
       margin-bottom: 10px;
       font-weight: 500;
     }
 
     .team-member .info .desc {
       font-size: 0.95rem;
-      color: #444;
+      color: #ccc;
       line-height: 1.5;
     }
 
     footer {
-      background-color: #f5f5f5;
-      color: #888;
+      background-color: #1a1a1a;
+      color: #aaa;
       text-align: center;
       padding: 30px 5%;
-      border-top: 1px solid #ddd;
+      border-top: 1px solid #b71c1c;
       font-size: 0.9rem;
-    }
-
-    /* スマホ対応 */
-    @media (max-width: 600px) {
-      .mainvisual {
-        height: 100px;
-        font-size: 20px;
-        padding-left: 15px;
-      }
-      .company-vision-wrapper {
-        top: 160px;
-      }
-      main {
-        margin-top: 240px;
-      }
     }
   </style>
 </head>
@@ -242,12 +226,9 @@
     <div class="logo-container">
       <img src="https://github.com/machichi2525/my-website1/blob/main/uw_%E3%83%AD%E3%82%B4%E2%91%A0.jpg?raw=true" alt="合同会社アンダーウィル ロゴ" />
     </div>
-    <div class="menu-icon">&#9776;</div>
   </header>
 
-  <div class="mainvisual">
-    企業情報
-  </div>
+  <div class="mainvisual"></div>
 
   <div class="company-vision-wrapper">
     <div class="company-vision">
