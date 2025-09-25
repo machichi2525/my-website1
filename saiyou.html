@@ -1,1 +1,325 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>合同会社アンダーウィル</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #fefae0; /* 明るい黄色ベース */
+      color: #333;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ヘッダー */
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 5%;
+      background: linear-gradient(90deg, #fdf497, #a1c4fd); /* 黄色から青 */
+      border-bottom: 1px solid #ccc;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+    }
+
+    .logo-container img {
+      width: 120px;
+      height: auto;
+      display: block;
+    }
+
+    /* 企業理念の横流し */
+    .company-vision-wrapper {
+      position: fixed;
+      top: 100px;
+      width: 100%;
+      background-color: #fff3b0;
+      padding: 12px 0;
+      overflow: hidden;
+      z-index: 90;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .company-vision {
+      display: inline-block;
+      white-space: nowrap;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #003049;
+      padding-left: 100%;
+      animation: visionScroll 15s linear infinite;
+    }
+
+    @keyframes visionScroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 180px auto 60px;
+      padding: 0 5%;
+    }
+    <section class="philosophy-section">
+  <h3>企業理念</h3>
+  <p>
+    私たちは「お客様の未来を照らし、革新をもたらす企業であり続ける」ことを信念に、<br>
+    技術と創造力を活かして社会に貢献してまいります。
+  </p>
+</section>
+
+    /* 企業概要 */
+    .company-info {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 10px;
+      margin-bottom: 60px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .company-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: #003566;
+      margin-bottom: 24px;
+    }
+
+    .company-info .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 40px;
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    @media (max-width: 768px) {
+      .company-info .info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* 社員紹介 */
+    .team-section {
+      margin-bottom: 80px;
+    }
+
+    .team-section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: #005f73;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .team-members {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .team-member {
+      background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .team-member:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+
+    .team-member .photo {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background-color: #e0f7fa;
+      overflow: hidden;
+    }
+
+    .team-member .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .team-member .info {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .team-member .info h4 {
+      font-size: 1.4rem;
+      color: #003049;
+    }
+
+    .team-member .info .role {
+      font-size: 1rem;
+      color: #005f73;
+      margin-bottom: 10px;
+    }
+
+    .team-member .info .desc {
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    /* 採用情報 */
+    .recruit-section {
+      margin-bottom: 80px;
+    }
+
+    .recruit-section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: #003566;
+      margin-bottom: 24px;
+    }
+
+    .recruit-section p {
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 16px;
+    }
+
+    .recruit-section a {
+      display: inline-block;
+      background-color: #0077b6;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .recruit-section a:hover {
+      background-color: #023e8a;
+    }
+
+    /* フッター */
+    footer {
+      background-color: #f1f1f1;
+      color: #888;
+      text-align: center;
+      padding: 30px 5%;
+      border-top: 1px solid #ccc;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header>
+    <div class="logo-container">
+      <img src="https://github.com/machichi2525/my-website1/blob/main/uw_%E3%83%AD%E3%82%B4%E2%91%A0.jpg?raw=true" alt="合同会社アンダーウィル ロゴ" />
+    </div>
+  </header>
+
+  <!-- 企業理念（横スクロール） -->
+  <div class="company-vision-wrapper">
+    <div class="company-vision">
+      企業理念：私たちはお客様の未来を照らし、革新をもたらす企業であり続けます。
+    </div>
+  </div>
+
+  <!-- メインコンテンツ -->
+  <main>
+
+    <!-- 企業概要 -->
+    <section class="company-info">
+      <h3>企業概要</h3>
+      <div class="info-grid">
+        <p><strong>会社名：</strong>合同会社アンダーウィル</p>
+        <p><strong>所在地：</strong>〒????-???? 〇〇〇〇</p>
+        <p><strong>代表者：</strong>代表取締役　栁本 浩汰</p>
+        <p><strong>設立：</strong>2024年3月14日</p>
+        <p><strong>資本金：</strong>15万円</p>
+        <p><strong>従業員数：</strong>20名（2025年9月現在）</p>
+        <p><strong>事業内容：</strong>通信事業、Webサイト制作、デジタルマーケティング支援、システム開発</p>
+        <p><strong>主要取引先：</strong>株式会社〇〇、株式会社△△、株式会社□□</p>
+        <p><strong>取引銀行：</strong>〇〇銀行 〇〇支店</p>
+        <p><strong>URL：</strong>https://www.〇〇〇</p>
+      </div>
+    </section>
+
+    <!-- 社員紹介 -->
+    <section class="team-section">
+      <h3>社員紹介</h3>
+      <div class="team-members">
+        <div class="team-member">
+          <div class="photo">
+            <img src="https://raw.githubusercontent.com/machichi2525/my-website1/main/S__5603390.jpg" alt="栁本 浩汰" />
+          </div>
+          <div class="info">
+            <h4>栁本 浩汰</h4>
+            <p class="role">代表取締役社長</p>
+            <p class="desc">企業理念を基に、新たな未来を切り開いています。</p>
+          </div>
+        </div>
+
+        <div class="team-member">
+          <div class="photo">
+            <img src="https://via.placeholder.com/400" alt="田中 満里菜" />
+          </div>
+          <div class="info">
+            <h4>田中 満里菜</h4>
+            <p class="role">営業部 部長</p>
+            <p class="desc">お客様のニーズを最優先に、プロジェクトを推進しています。</p>
+          </div>
+        </div>
+
+        <div class="team-member">
+          <div class="photo">
+            <img src="https://via.placeholder.com/400" alt="山田 太郎" />
+          </div>
+          <div class="info">
+            <h4>山田 太郎</h4>
+            <p class="role">開発部 部長</p>
+            <p class="desc">最新技術を駆使し、革新的な製品開発に取り組んでいます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 採用情報 -->
+    <section class="recruit-section">
+      <h3>採用情報</h3>
+      <p>私たちは共に未来を創る仲間を募集しています。</p>
+      <p>エンジニア、営業、マーケティングなど、さまざまな職種で人材を募集中です。</p>
+      <a href="#">応募はこちらから</a>
+    </section>
+
+  </main>
+
+  <!-- フッター -->
+  <footer>
+    <p>合同会社アンダーウィル - All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
 
