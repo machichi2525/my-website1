@@ -14,8 +14,8 @@
 
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: #111; /* 黒ベース */
-      color: #eee; /* 明るめの文字色 */
+      background-color: #1a1a1a; /* ヘッダー背景色と統一 */
+      color: #eee;
       line-height: 1.6;
     }
 
@@ -30,8 +30,8 @@
       justify-content: center;
       align-items: center;
       padding: 20px 5%;
-      background-color: #1a1a1a; /* 黒に近いダークグレー */
-      border-bottom: 3px solid #b71c1c; /* 深い赤のボーダー */
+      background-color: #1a1a1a;
+      border-bottom: 3px solid #b71c1c;
       position: fixed;
       top: 0;
       left: 0;
@@ -43,7 +43,7 @@
       width: 120px;
       height: auto;
       display: block;
-      filter: brightness(0) invert(1); /* ロゴがもし黒い場合は白っぽく */
+      filter: brightness(0) invert(1);
     }
 
     /* メインビジュアル */
@@ -52,7 +52,7 @@
       background-size: cover;
       background-position: center;
       height: 180px;
-      margin: 80px auto 40px; /* ヘッダー分のスペース調整 */
+      margin: 80px auto 40px;
       max-width: 1100px;
       border-bottom: 4px solid #b71c1c;
       filter: brightness(0.75);
@@ -62,7 +62,7 @@
     /* 企業理念 横流しセクション */
     .company-vision-wrapper {
       width: 100%;
-      background-color: #b71c1c; /* 深い赤 */
+      background-color: #b71c1c;
       padding: 12px 0;
       overflow: hidden;
       z-index: 90;
@@ -97,11 +97,11 @@
 
     /* 企業概要 */
     .company-info {
-      background-color: #222; /* 濃いグレー黒 */
+      background-color: #222;
       padding: 40px;
       border-radius: 8px;
       margin-bottom: 60px;
-      box-shadow: 0 6px 16px rgba(183, 28, 28, 0.5); /* 赤の影 */
+      box-shadow: 0 6px 16px rgba(183, 28, 28, 0.5);
       color: #eee;
     }
 
@@ -109,7 +109,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       font-weight: 700;
-      color: #b71c1c; /* 深い赤 */
+      color: #b71c1c;
       margin-bottom: 24px;
       border-left: 6px solid #b71c1c;
       padding-left: 12px;
@@ -121,12 +121,6 @@
       gap: 16px 40px;
       font-size: 1.1rem;
       color: #ddd;
-    }
-
-    @media (max-width: 768px) {
-      .company-info .info-grid {
-        grid-template-columns: 1fr;
-      }
     }
 
     /* 社員紹介セクション */
@@ -210,6 +204,36 @@
       line-height: 1.5;
     }
 
+    /* 採用情報セクション */
+    .recruit-section {
+      background-color: #222;
+      padding: 40px;
+      border-radius: 8px;
+      margin-bottom: 60px;
+      box-shadow: 0 6px 16px rgba(183, 28, 28, 0.5);
+      color: #eee;
+    }
+
+    .recruit-section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #b71c1c;
+      margin-bottom: 24px;
+      border-left: 6px solid #b71c1c;
+      padding-left: 12px;
+      text-align: center;
+    }
+
+    .recruit-section p {
+      font-size: 1.1rem;
+      color: #ddd;
+      max-width: 900px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* フッター */
     footer {
       background-color: #1a1a1a;
       color: #aaa;
@@ -217,6 +241,34 @@
       padding: 30px 5%;
       border-top: 1px solid #b71c1c;
       font-size: 0.9rem;
+    }
+
+    /* レスポンシブ対応 */
+    @media (max-width: 768px) {
+      .company-info .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      main {
+        margin: 40px 20px 60px;
+        padding: 0 10px;
+      }
+
+      .team-members {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .company-vision {
+        font-size: 1.2rem;
+      }
+
+      .company-info h3,
+      .team-section h3,
+      .recruit-section h3 {
+        font-size: 1.8rem;
+      }
     }
   </style>
 </head>
@@ -289,6 +341,17 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <section class="recruit-section">
+      <h3>採用情報</h3>
+      <p>
+        合同会社アンダーウィルでは、共に会社の未来を創る仲間を募集しています。<br />
+        【募集職種】営業、開発、マーケティング、サポートスタッフ<br />
+        【応募資格】経験者優遇、未経験者も歓迎<br />
+        【待遇】社会保険完備、交通費支給、昇給あり<br />
+        詳細はお問い合わせフォームよりご連絡ください。
+      </p>
     </section>
   </main>
 
